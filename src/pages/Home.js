@@ -10,7 +10,7 @@ function Home({data}) {
 
     return <div className="home">
     <Filter stock={{stockData, setStockData , modifiedArray, setModifiedArray}} />
-    <DisplayStock stock={{stockData}} />
+    {/* <DisplayStock stock={{stockData}} /> */}
     
     </div>
   

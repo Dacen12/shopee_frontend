@@ -187,15 +187,19 @@ body {
       grid-template-rows: 60% 15% 25%; }
       .display-stock .card img {
         width: 100%;
-        height: 100%;
-        min-width: 1rem; }
+        height: auto;
+        display: block;
+        object-fit: fill;
+        transform: scale(1); }
       .display-stock .card .splide-holder {
         width: 11.9rem;
         height: 100%;
-        margin: 0 auto; }
+        margin: 0 auto;
+        overflow: hidden; }
       .display-stock .card .splide-wave {
         width: 100%;
-        height: 100%; }
+        height: 100%;
+        overflow: hidden; }
       .display-stock .card .item-info span {
         display: block; }
       .display-stock .card .item-info .item-brand {
