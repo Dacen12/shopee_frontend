@@ -7,3 +7,224 @@
   padding: 0;
   font-family: "Duru Sans", sans-serif;
   font-size: 12pt; }
+
+body {
+  background-color: #F8EDEB; }
+
+.hider {
+  display: none; }
+
+.nav {
+  width: 100vw;
+  height: 10rem;
+  background: #EC6D19; }
+
+@media only screen and (max-width: 900px) {
+  .nav {
+    width: 100%;
+    height: 7vh;
+    background: #EC6D19;
+    display: grid;
+    grid-template-columns: 70% auto;
+    grid-template-rows: 100%; }
+    .nav__logo {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center; }
+      .nav__logo__icon {
+        display: block;
+        background: url("../../assets/sshopeelogopng.png") no-repeat;
+        background-size: 100px;
+        width: 100%;
+        height: 90%;
+        cursor: pointer; }
+    .nav .container {
+      width: 100%;
+      height: 100%;
+      padding-top: 5px;
+      display: flex; }
+      .nav .container__bag {
+        width: 95%;
+        max-width: 4rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .nav .container__bag__icon {
+          background: url("../../assets/shopping-bag.png") no-repeat;
+          display: block;
+          background-size: 25px;
+          width: 50%;
+          height: 60%; }
+      .nav .container__menu {
+        width: 100%;
+        height: 100%;
+        max-width: 4rem;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .nav .container__menu__icon {
+          background: url("../../assets/menu.png") no-repeat;
+          background-size: 25px;
+          display: block;
+          width: 40%;
+          height: 40%; }
+  .home {
+    width: 100%;
+    min-height: 93vh;
+    background: #F8EDEB;
+    max-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; }
+  .filter {
+    border: 2px solid #EC6D19;
+    width: 95%;
+    height: 4rem;
+    position: relative;
+    top: 20px;
+    left: 10px; }
+    .filter__container {
+      width: 100%;
+      height: 100%;
+      max-width: 25rem;
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 85% 20%;
+      grid-template-rows: 100%; }
+      .filter__container .splide-container {
+        max-width: 4rem;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        max-width: 100%;
+        align-items: center; }
+        .filter__container .splide-container .asplide {
+          display: grid;
+          width: 100%;
+          min-width: fit-content;
+          max-width: fit-content;
+          height: 50%;
+          min-height: 2.3rem;
+          background: #EC6D19;
+          min-width: 150px;
+          max-width: 150px;
+          grid-template-columns: 70% 30%;
+          grid-template-rows: 100%;
+          margin-left: 1rem;
+          animation: appearSplideFilter 0.2s ease-in forwards;
+          opacity: 0; }
+          .filter__container .splide-container .asplide .attr-span {
+            cursor: pointer;
+            height: fit-content;
+            display: block;
+            align-self: center;
+            justify-self: center; }
+          .filter__container .splide-container .asplide .rm-b {
+            display: block;
+            background-size: 25px;
+            background-image: url("../../assets/close.png");
+            background-repeat: no-repeat;
+            cursor: pointer;
+            width: 60%;
+            height: 70%;
+            align-self: center;
+            justify-self: center; }
+    .filter__icon {
+      background: url("../../assets/filter.png") no-repeat;
+      width: 50%;
+      height: 50%;
+      display: block;
+      background-size: 35px;
+      align-self: center;
+      justify-self: center;
+      padding-right: 10px; }
+    .filter .filter-container {
+      position: absolute;
+      width: 15rem;
+      height: 17rem;
+      border: 2px solid #EC6D19;
+      background: #F8EDEB;
+      z-index: 5;
+      right: -2px;
+      animation: appearFilter 0.2s ease-out forwards;
+      opacity: 0; }
+      .filter .filter-container ul {
+        list-style: none;
+        width: 95%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        text-indent: 1rem; }
+        .filter .filter-container ul li {
+          padding-top: 10px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid #EC6D19;
+          cursor: pointer;
+          margin: 1px; }
+          .filter .filter-container ul li:active {
+            background: #EC6D19; }
+  .display-stock {
+    width: 95%;
+    height: 100%;
+    min-height: fit-content;
+    margin: 0 auto;
+    padding-bottom: 1px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 30rem;
+    grid-auto-columns: 50% 50%; }
+    .display-stock .card-holder {
+      width: 100%;
+      height: 100%;
+      user-select: none; }
+    .display-stock .card {
+      width: 95%;
+      height: 95%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: 60% 15% 25%; }
+      .display-stock .card img {
+        width: 100%;
+        height: 100%;
+        min-width: 1rem; }
+      .display-stock .card .splide-holder {
+        width: 11.9rem;
+        height: 100%;
+        margin: 0 auto; }
+      .display-stock .card .splide-wave {
+        width: 100%;
+        height: 100%; }
+      .display-stock .card .item-info span {
+        display: block; }
+      .display-stock .card .item-info .item-brand {
+        margin-bottom: 10px; }
+      .display-stock .card .option-holder {
+        display: flex;
+        flex-direction: column; }
+        .display-stock .card .option-holder .price-right {
+          display: flex;
+          padding-right: 10px;
+          height: 60px;
+          align-self: flex-end;
+          user-select: none; }
+          .display-stock .card .option-holder .price-right span {
+            font-size: 14pt; }
+        .display-stock .card .option-holder .add-to-cart {
+          color: #F8EDEB;
+          margin: 0 auto;
+          background: #EC6D19;
+          padding: 10px;
+          cursor: pointer; }
+          .display-stock .card .option-holder .add-to-cart:active {
+            background: orange;
+            user-select: none; } }
+
+@keyframes appearFilter {
+  to {
+    opacity: 1; } }
+
+@keyframes appearSplideFilter {
+  to {
+    opacity: 1; } }
