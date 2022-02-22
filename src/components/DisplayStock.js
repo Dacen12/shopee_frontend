@@ -1,22 +1,42 @@
 import React, {useEffect} from 'react'
-import Card from './Card'
-function DisplayStock({stock}) {
-  const {stockData} = stock
+import {SplideSlide, Splide} from '@splidejs/react-splide'
+import '@splidejs/splide/dist/css/splide.min.css';
 
-  useEffect(() => {
-    console.log(stockData)
-  }, [])
+function DisplayStock({stock}) {
+  const {modifiedArray, setModifiedArray, stockData} = stock
+
+
+ 
   return (
 
     <div className="display-stock">
    
-      {stockData && stockData.map((obj) => (
+      {modifiedArray && modifiedArray.map((obj) => (
         <div key={obj.id} className="card-holder">
-        <Card arrayObj={obj}  />
+        <div className="card">
+        <Splide className="splide-holder" options={{arrows: false}}>
+       
+           {obj.image_url.map((url) => (
+              <SplideSlide className="splide-wave">
+              <img src={url} />
+          </SplideSlide>
+           ))}
+    
+        
+        </Splide>
+        <div className="item-info">
+        <span className="item-brand">{obj.brand}</span>
+            <span className="item-model">{obj.model}</span>
+        </div>
+        
+        <div className="option-holder">
+            <div className="price-right">€ {obj.price}<span></span></div>
+            <div className="add-to-cart">Toevoegen</div>
+        </div>
+    </div>
       </div>
       ))}
       
-  
     </div>
   )
 }

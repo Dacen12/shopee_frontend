@@ -3,7 +3,7 @@ import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css';
 import useFilter from '../misc/useFilter';
 function Filter({stock}) {
-  const [setFilter, filterOptions, {hideFilter, setHideFilter}, deleteFilter] = useFilter(stock)
+  const [setFilter, filterOptions, deleteFilter, setHideFilter, hideFilter] = useFilter(stock)
  
 
   
@@ -17,7 +17,7 @@ function Filter({stock}) {
         
         <Splide className="splide-container" options={{arrows: false, gap: '20px', perPage: 2}}>
         {filterOptions.map((obj) => (<>
-          <SplideSlide key={obj.filterId} onClick={e => deleteFilter(e)} className="asplide" data-tag={obj.clickId}>
+          <SplideSlide key={obj.liId} className="asplide" data-tag={obj.filterId} onClick={e => deleteFilter(e)}>
             <span   className="attr-span">{obj.attrTrans}</span>
             <span   className="rm-b"></span>
           </SplideSlide>
@@ -26,21 +26,21 @@ function Filter({stock}) {
         ))}
         </Splide>
 
-        <div onClick={() => {setHideFilter(prevValue => !prevValue)}} className="filter__icon"></div>
+        <div onClick={() => setHideFilter(prevValue => !prevValue)}  className="filter__icon"></div>
       </div>
 
       
 
-
-      <div className={`filter-container ${hideFilter ? 'hider' : ''}`}>
+        {/* hide filter ${hideFilter ? 'hider' : ''} */}
+      <div className={`filter-container ${hideFilter == true ? 'hider' : ''} `}>
         <ul>
-          <li  data-trans="Prijs oplopend" id="price_ascending" onClick={e => setFilter(e.target)}>Prijs oplopend</li>
-          <li  data-trans="Prijs aflopend" id="price_descending"onClick={e => setFilter(e.target)}>Prijs aflopend</li>
-          <li  data-trans="Schoenen"       id="shoe"            onClick={e => setFilter(e.target)}>Schoenen      </li>
-          <li  data-trans="Jurken"         id="skirt"           onClick={e => setFilter(e.target)}>Jurken        </li>
-          <li  data-trans="Jassen"         id="jacket"          onClick={e => setFilter(e.target)}>Jassen        </li>
-          <li  data-trans="Broeken"        id="pants"           onClick={e => setFilter(e.target)}>Broeken       </li>
-          <li  data-trans="Oorbellen"      id="earring"         onClick={e => setFilter(e.target)}>Oorbellen     </li>
+          <li  data-trans="Prijs oplopend" onClick={e => setFilter(e.target)} id="price_ascending">Prijs oplopend</li>
+          <li  data-trans="Prijs aflopend" onClick={e => setFilter(e.target)} id="price_descending">Prijs aflopend</li>
+          <li  data-trans="Schoenen"       onClick={e => setFilter(e.target)} id="shoe">Schoenen</li>
+          <li  data-trans="Jurken"         onClick={e => setFilter(e.target)} id="skirt">Jurken</li>
+          <li  data-trans="Jassen"         onClick={e => setFilter(e.target)} id="jacket">Jassen</li>
+          <li  data-trans="Broeken"        onClick={e => setFilter(e.target)} id="pants">Broeken</li>
+          <li  data-trans="Oorbellen"      onClick={e => setFilter(e.target)} id="earring">Oorbellen</li>
         </ul>
       </div>
     </div>
