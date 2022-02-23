@@ -151,6 +151,27 @@ body {
   @keyframes showNavigator {
     to {
       opacity: 1; } }
+    .nav .Bag {
+      position: absolute;
+      width: 20rem;
+      height: 100%;
+      opacity: 0.6;
+      background: #EC6D19;
+      z-index: 15; }
+    .nav .setreverse {
+      animation: slideRight 0.2s ease-out forwards; }
+    .nav .setforwards {
+      animation: slideLeft 0.2s ease-in forwards; }
+  @keyframes slideLeft {
+    from {
+      right: -10rem; }
+    to {
+      right: 2rem; } }
+  @keyframes slideRight {
+    from {
+      right: 2rem; }
+    to {
+      right: -10rem; } }
   .home {
     width: 100%;
     min-height: 93vh;
@@ -260,6 +281,12 @@ body {
       width: 100%;
       height: 100%;
       user-select: none; }
+    .display-stock .display-link {
+      text-decoration: none; }
+    .display-stock .txt-white {
+      color: #F8EDEB; }
+    .display-stock .txt-black {
+      color: #000000; }
     .display-stock .card {
       width: 95%;
       height: 95%;
@@ -300,6 +327,7 @@ body {
           margin: 0 auto;
           background: #EC6D19;
           padding: 10px;
+          text-decoration: none;
           cursor: pointer; }
           .display-stock .card .option-holder .add-to-cart:active {
             background: orange;
@@ -336,29 +364,18 @@ body {
     display: flex;
     height: 2.5rem;
     width: 100%; }
+    .breadcrumbs .fixtext {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
     .breadcrumbs .crumb-container {
       width: fit-content;
-      padding-right: 10px;
-      padding-left: 10px;
-      display: flex;
-      align-items: center; }
-    .breadcrumbs .bread-id {
-      width: 1rem;
-      display: block;
-      height: fit-content;
-      min-width: fit-content;
-      font-size: 12pt;
-      margin-right: 0.2rem;
-      justify-self: left; }
-      .breadcrumbs .bread-id:hover {
-        border-bottom: 1px solid #EC6D19;
-        color: #EC6D19;
-        cursor: pointer; }
-    .breadcrumbs i {
-      background: url("../../assets/arr.png") no-repeat;
-      height: 30%;
-      background-size: 15px;
-      width: 1rem; }
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+      display: flex; }
+      .breadcrumbs .crumb-container .bread-id {
+        align-self: center;
+        display: inline-block; }
   .link:visited {
     color: #EC6D19;
     text-decoration: none;
@@ -396,7 +413,8 @@ body {
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 65% 35%; }
+    grid-template-rows: 65% 35%;
+    padding-bottom: 1rem; }
     .Item .img-frame {
       width: 100%;
       max-width: 20rem;
@@ -455,7 +473,6 @@ body {
     .info-item .size-outer-container {
       width: 90%;
       height: 90%;
-      background: lightcoral;
       min-width: 15rem;
       max-width: 30rem;
       max-height: 10rem;
@@ -463,7 +480,6 @@ body {
       margin: 0 auto;
       display: flex; }
       .info-item .size-outer-container .size-container {
-        background: lightblue;
         width: 100%;
         height: 90%;
         align-self: center;
@@ -479,28 +495,49 @@ body {
           user-select: none;
           font-size: 16pt;
           justify-self: center;
-          border-bottom: 1px solid orange; }
+          border-bottom: 1px solid #EC6D19; }
         .info-item .size-outer-container .size-container .size {
-          background: lightcoral;
           display: flex;
           gap: 1rem;
           justify-content: center; }
           .info-item .size-outer-container .size-container .size .sizebox {
             border: 1px solid #EC6D19;
             width: fit-content;
-            padding: 0.5rem;
+            padding: 0.4rem;
             height: fit-content;
             min-width: 1rem;
             text-align: center;
             align-self: center;
             cursor: pointer; }
+          .info-item .size-outer-container .size-container .size .set-selected-size {
+            color: white;
+            animation: setsize 0.2s forwards; }
+  @keyframes setsize {
+    to {
+      background: #EC6D19; } }
     .info-item .with-size {
-      background: red;
-      display: flex; }
+      display: flex;
+      justify-content: center; }
+    .info-item .without-size {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
     .info-item .cart-button {
       width: 100%;
       height: 100%;
-      min-height: 3rem; } }
+      min-height: 3rem;
+      max-height: 3rem;
+      max-width: 16rem;
+      margin-top: 1rem;
+      background: #EC6D19;
+      border: none;
+      color: #F8EDEB;
+      cursor: pointer; }
+      .info-item .cart-button:hover {
+        background: #d49623;
+        transition: background 0.2s ease-out; } }
 
 @keyframes appearFilter {
   to {

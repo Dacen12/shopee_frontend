@@ -1,9 +1,13 @@
 import React, {useState} from 'react'
-
-
+import useBag from './components/useBag'
+import Bag from './components/Bag'
 import {Link} from 'react-router-dom'
-function Nav() {
+
+
+function Nav({getBag}) {
   const [hideElement, setHideElement] = useState(true)
+  const {bag, setBag, showBag, setShowBag} = getBag
+
   return (
     <div className="nav">
         <div className="nav__logo">
@@ -11,7 +15,9 @@ function Nav() {
         </div>
         <div className="container">
         <div className="container__bag">
-            <span className="container__bag__icon"></span>
+          {/*  set this onclickEvent bag */}
+            <span onClick={() => setShowBag(prevValue => !prevValue)} className="container__bag__icon"></span>
+          {showBag && <Bag hideBag={{ bag, setBag, showBag,setShowBag}} />}
         </div>
         <div  className="container__menu">
             <span onClick={ () => setHideElement(prevValue => !prevValue)} className="container__menu__icon"></span>

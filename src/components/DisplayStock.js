@@ -1,11 +1,20 @@
 import React, {useEffect} from 'react'
 import {SplideSlide, Splide} from '@splidejs/react-splide'
+import { Link } from 'react-router-dom';
 import '@splidejs/splide/dist/css/splide.min.css';
 
 function DisplayStock({stock}) {
   const {modifiedArray} = stock
 
-
+  function setLinkToItem(obj){
+    const {id, sex} = obj
+    console.log(id, sex)
+    if(sex == 'male'){
+      return  `/gndr/heren/item_id=${id}`
+    } else if(sex == 'female'){
+      return `/gndr/dames/item_id=${id}`
+    }
+  }
  
   return (
 
@@ -21,17 +30,17 @@ function DisplayStock({stock}) {
               <img src={url} />
           </SplideSlide>
            ))}
-    
+      {setLinkToItem(obj)}
         
         </Splide>
         <div className="item-info">
         <span className="item-brand">{obj.brand}</span>
-            <span className="item-model">{obj.model}</span>
+            <span className="item-model"><Link className="display-link txt-black" to={setLinkToItem(obj)}>{obj.model}</Link></span>
         </div>
         
         <div className="option-holder">
             <div className="price-right">€ {obj.price}<span></span></div>
-            <div className="add-to-cart">Toevoegen</div>
+            <div className="add-to-cart"><Link className="display-link txt-white" to={setLinkToItem(obj)}>Toevoegen</Link></div>
         </div>
     </div>
       </div>
@@ -40,5 +49,5 @@ function DisplayStock({stock}) {
     </div>
   )
 }
-
+// <Link className="display-link" to={setLinkToItem(obj)}>Toevoegen</Link>
 export default DisplayStock

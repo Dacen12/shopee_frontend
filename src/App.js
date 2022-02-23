@@ -7,12 +7,15 @@ import useData from "./misc/useData";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
 import Item from "./pages/Item";
+import useBag from "./components/useBag";
+
 function App() {
   const [{stockData, setStockData}, {modifiedArray, setModifiedArray}] = useData()
-
+  const [bag, setBag, [showBag, setShowBag]] = useBag()
+  
   return (
     <BrowserRouter>
-    <Nav />
+    <Nav getBag={{bag, setBag, showBag, setShowBag}} />
 
     <Routes>
      
@@ -20,6 +23,8 @@ function App() {
     <Route path={PATH.WOMEN} element={<Women  />}/>
     <Route path={PATH.MEN} element={<Men />} />
     <Route path={DYNAMICPATHS.ITEM_PATH} element={<Item />} />
+
+    
     </Routes>
     </BrowserRouter>
   );
