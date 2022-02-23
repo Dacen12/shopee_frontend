@@ -3,7 +3,7 @@ import {SplideSlide, Splide} from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css';
 
 function DisplayStock({stock}) {
-  const {modifiedArray, setModifiedArray, stockData} = stock
+  const {modifiedArray} = stock
 
 
  

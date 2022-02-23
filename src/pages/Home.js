@@ -7,6 +7,7 @@ function Home({data}) {
     const {stockData, setStockData, modifiedArray, setModifiedArray} = data
     
   
+
     return <div className="home">
     <Filter stock={{stockData, setStockData , modifiedArray, setModifiedArray}} />
     <DisplayStock stock={{modifiedArray, setModifiedArray, stockData}} />

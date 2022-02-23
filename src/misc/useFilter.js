@@ -1,13 +1,11 @@
 import React, {useEffect, useState, useReducer} from 'react'
 import {makeId} from './makeid'
 import backup from '../backup.json'
-import {jason} from '../backupdta'
+
 
 function useFilter(stock) {
-    const {stockData, setStockData, modifiedArray, setModifiedArray} = stock
+    const {stockData, modifiedArray, setModifiedArray} = stock
     const [filterOptions, setFilterOptions] = useState([])
-    const [constData, setConstData] = useState(jason)
-    const [newModifiedArray, setNewModifiedArray] = useState([])
     const [hideFilter, setHideFilter] = useState(true)
     // returns selected filter array
     function setFilter(target){

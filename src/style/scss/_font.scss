@@ -3,6 +3,10 @@
     src: url('../fonts/DuruSans-Regular.ttf');
 }
 
+@font-face{
+    font-family: 'Roboto-Light', sans-serif;
+    src: url('../../style/fonts/Roboto-Light.ttf') format('truetype');
+}
 
 $Duru: 'Duru Sans', sans-serif;
-
+$Roboto: 'Roboto-Light', sans-serif;
