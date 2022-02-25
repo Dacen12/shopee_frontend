@@ -1,12 +1,14 @@
 import React, {useState} from 'react'
 import useBag from './components/useBag'
-import Bag from './components/Bag'
+import Bag from './pages/Bag'
+import { useNavigate } from 'react-router-dom'
 import {Link} from 'react-router-dom'
 
 
-function Nav({getBag}) {
+function Nav({useBag}) {
   const [hideElement, setHideElement] = useState(true)
-  const {bag, setBag, showBag, setShowBag} = getBag
+  const {bag, addToBag, showBag, setShowBag} = useBag
+  const navigator = useNavigate()
 
   return (
     <div className="nav">
@@ -16,8 +18,8 @@ function Nav({getBag}) {
         <div className="container">
         <div className="container__bag">
           {/*  set this onclickEvent bag */}
-            <span onClick={() => setShowBag(prevValue => !prevValue)} className="container__bag__icon"></span>
-          {showBag && <Bag hideBag={{ bag, setBag, showBag,setShowBag}} />}
+        <span onClick={() => navigator('/winkelwagen')} className="container__bag__icon"></span>
+           
         </div>
         <div  className="container__menu">
             <span onClick={ () => setHideElement(prevValue => !prevValue)} className="container__menu__icon"></span>
@@ -35,6 +37,7 @@ function Nav({getBag}) {
 
         </div>
         </div>
+
     </div>
   )
 }

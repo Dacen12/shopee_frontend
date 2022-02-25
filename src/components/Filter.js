@@ -34,8 +34,6 @@ function Filter({stock}) {
         {/* hide filter ${hideFilter ? 'hider' : ''} */}
       <div className={`filter-container ${hideFilter == true ? 'hider' : ''} `}>
         <ul>
-          <li  data-trans="Prijs oplopend" onClick={e => setFilter(e.target)} id="price_ascending">Prijs oplopend</li>
-          <li  data-trans="Prijs aflopend" onClick={e => setFilter(e.target)} id="price_descending">Prijs aflopend</li>
           <li  data-trans="Schoenen"       onClick={e => setFilter(e.target)} id="shoe">Schoenen</li>
           <li  data-trans="Jurken"         onClick={e => setFilter(e.target)} id="skirt">Jurken</li>
           <li  data-trans="Jassen"         onClick={e => setFilter(e.target)} id="jacket">Jassen</li>

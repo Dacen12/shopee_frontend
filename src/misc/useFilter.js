@@ -8,19 +8,20 @@ function useFilter(stock) {
     const [filterOptions, setFilterOptions] = useState([])
     const [hideFilter, setHideFilter] = useState(true)
     // returns selected filter array
+
     function setFilter(target){
         const {id} = target
         const dataValue = target.attributes.getNamedItem('data-trans').value
-        if(filterOptions.length != 0){
-            const filterExists = filterOptions.some(el => el.filterId == id)
-            if(!filterExists) {
-                setFilterOptions(prevValue => ([...prevValue, {liId: makeId(5), attrTrans: dataValue, filterId: id}]))
-            }
-        } else {
-            setFilterOptions(prevValue => ([...prevValue, {liId: makeId(5), attrTrans: dataValue, filterId: id}]))
-        }
-    }
 
+           const filterFound = filterOptions.some(obj => obj.filterId == id)
+           if(!filterFound){
+            setFilterOptions(prevValue => ([...prevValue, {liId: makeId(5), attrTrans: dataValue, filterId: id}]))
+           } 
+      
+    }
+     
+
+   
 
     function deleteFilter(event){
       const dataValue = event.currentTarget.getAttribute('data-tag')
@@ -30,11 +31,13 @@ function useFilter(stock) {
 
     function addFilter() {
         let tempArray = []
-        filterOptions.forEach((req) => {
-            var data = stockData.filter(obj => obj.type == req.filterId)
-            tempArray.push(...data)
-        })
-    setModifiedArray(tempArray)
+        var data = stockData && [ ...stockData]
+       for(var filter of filterOptions){
+          const reqFilter = data.filter(obj => obj.type == filter.filterId)
+            tempArray.push(...reqFilter)
+       }
+
+        setModifiedArray(tempArray)   
     }
 
 

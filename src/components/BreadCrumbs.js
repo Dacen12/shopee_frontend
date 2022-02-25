@@ -17,6 +17,8 @@ function BreadCrumbs({model}) {
             return <Link className="link" to={'/heren'}>/Heren</Link>
         } else if(locationFixed.includes('dames')){
             return <Link className="link" to={'/dames'}>/Dames</Link>
+        } else if(locationFixed.includes('winkelwagen')){
+            return 'Winkelwagen'
         }
     }
 
@@ -24,7 +26,7 @@ function BreadCrumbs({model}) {
         checkPath()
     }, [])
     
-    console.log(location)
+
     return (
     <div className="breadcrumbs">
     <div className="crumb-container">

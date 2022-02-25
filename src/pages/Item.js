@@ -6,11 +6,27 @@ import ErrorDialog from '../components/ErrorDialog'
 import axios from 'axios'
 import BreadCrumbs from '../components/BreadCrumbs'
 import {makeId} from '../misc/makeid'
-function Item() {
+function Item({useBag}) {
   const params = useParams()
   const [itemStock, setItemStock] = useState([])
   const [itemModel, setItemModel] = useState('')
   const [selectedSize, setSelectedSize] = useState({})
+  const {bag, addToBag, showBag, setShowBag} = useBag
+
+
+  function passToBag(stockArray){
+    const formatAttributes = {
+      id: selectedSize.sizeId,
+      brand: stockArray.brand,
+      model: stockArray.model,
+      price: stockArray.price,
+      image_url: stockArray.image_url && stockArray.image_url[0],
+      size: [{sizeId: makeId(3), selectedSize}],
+    }
+
+    addToBag(formatAttributes)
+
+  }
 
 
   const setBreadCrumb = useMemo(() => {
@@ -22,17 +38,18 @@ function getItem () {
    axios.get(`http://192.168.1.210:4040/gndr/${params.gender}/item_id=${params.item}`).then((res) => {
    setItemStock(res.data)  
    setItemModel(res.data.model && res.data.model)
+
   })
 }
 
 function setSizeItem(e, el){
 const {target} = e
-const setterId = target.attributes.getNamedItem('data-sizeId').value
-
+const setterId = target.attributes.getNamedItem('data-sizeid').value
+console.log(setterId)
 setSelectedSize({sizeId: setterId, element: el})
 }
-function Button(customclass) {
-  return (<div className={customclass}><button className="cart-button">Toevoegen aan winkelwagen</button></div>)
+function Button(customclass, stockArray) {
+  return (<div onClick={() => passToBag(stockArray)} className={customclass}><button  className="cart-button">Toevoegen aan winkelwagen</button></div>)
 }
 
  
@@ -67,13 +84,14 @@ function Button(customclass) {
             <div className="size-container">
               <span className="s-i">Maat</span>
               <div className="size">
-                {itemStock.size && itemStock.size.map((el) => (
-                  <span onClick={(e) => {setSizeItem(e, el)}} data-sizeId={makeId(5)} key={makeId(5)} className={`sizebox ${selectedSize.element == el ? 'set-selected-size': ''}`}>{el}</span>
-                ))}
+                {itemStock.size && itemStock.size.map((el, index) => {
+
+                 return <span onClick={(e) => {setSizeItem(e, el)}} data-sizeid={index} key={index} className={`sizebox ${selectedSize.element == el ? 'set-selected-size': ''}`}>{el}</span>
+                }) }
               </div>
-              {Button('with-size')}
+              {Button('with-size', itemStock)}
             </div>
-          </div>) : Button('without-size')}
+          </div>) : Button('without-size', itemStock)}
 
     </div>
     

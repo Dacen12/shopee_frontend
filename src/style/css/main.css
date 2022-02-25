@@ -24,32 +24,48 @@ body {
   background: #EC6D19; }
 
 @media only screen and (max-width: 900px) {
+  .redirect {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    margin: 0 auto;
+    margin-top: 50%;
+    opacity: 0;
+    animation: amin-redirect 0.2s ease-in forwards; }
+    .redirect .link-size {
+      font-size: 14pt; }
+    .redirect span {
+      font-size: 14pt; }
+  @keyframes amin-redirect {
+    to {
+      opacity: 1; } }
   .nav {
     width: 100%;
     height: 7vh;
     min-width: 100vw;
     min-height: 4rem;
     background: #EC6D19;
-    display: grid;
-    grid-template-columns: 70% auto;
-    grid-template-rows: 100%; }
+    display: flex; }
     .nav__logo {
-      width: 100%;
-      height: 100%;
+      width: fit-content;
+      height: 4rem;
       display: flex;
       align-items: center; }
       .nav__logo__icon {
-        display: block;
         background: url("../../assets/sshopeelogopng.png") no-repeat;
-        background-size: 100px;
-        width: 41%;
-        height: 90%;
+        background-size: 90px;
+        width: 7rem;
+        height: 70%;
         cursor: pointer; }
     .nav .container {
       width: 100%;
       height: 100%;
       padding-top: 5px;
-      display: flex; }
+      display: flex;
+      justify-content: right; }
       .nav .container__bag {
         width: 95%;
         max-width: 4rem;
@@ -151,27 +167,83 @@ body {
   @keyframes showNavigator {
     to {
       opacity: 1; } }
-    .nav .Bag {
-      position: absolute;
-      width: 20rem;
+  .Bag {
+    width: 100vw;
+    height: 100vh; }
+    .Bag .display-crumbs {
+      width: 100%;
+      height: fit-content; }
+    .Bag .bag-wrapper {
+      width: 100%;
       height: 100%;
-      opacity: 0.6;
-      background: #EC6D19;
-      z-index: 15; }
-    .nav .setreverse {
-      animation: slideRight 0.2s ease-out forwards; }
-    .nav .setforwards {
-      animation: slideLeft 0.2s ease-in forwards; }
-  @keyframes slideLeft {
-    from {
-      right: -10rem; }
-    to {
-      right: 2rem; } }
-  @keyframes slideRight {
-    from {
-      right: 2rem; }
-    to {
-      right: -10rem; } }
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 6rem;
+      grid-auto-rows: max-content;
+      grid-auto-columns: 100%;
+      gap: 20px; }
+    .Bag .item-container {
+      width: 100%;
+      height: 95%;
+      align-self: center;
+      align-items: center;
+      display: flex;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #EC6D19; }
+    .Bag .image-container {
+      width: 100%;
+      height: 95%;
+      max-width: 5rem;
+      min-width: 5rem;
+      overflow: hidden;
+      margin-left: 0.4rem; }
+      .Bag .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .Bag .item-start {
+      width: 100%;
+      height: 95%; }
+      .Bag .item-start .item-brand {
+        width: 100%;
+        text-indent: 1rem;
+        padding-bottom: 0.5rem; }
+      .Bag .item-start .item-model {
+        width: 100%;
+        min-width: 9rem;
+        text-indent: 1rem;
+        padding-bottom: 0.6rem;
+        max-width: fit-content;
+        padding-right: 10px; }
+        .Bag .item-start .item-model span {
+          font-size: 12pt; }
+      .Bag .item-start .item-price {
+        text-indent: 1rem; }
+    .Bag .item-selection {
+      width: 100%;
+      height: 100%;
+      max-width: fit-content;
+      display: flex;
+      justify-content: right;
+      align-items: center; }
+      .Bag .item-selection .item-delete {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        max-height: fit-content;
+        max-width: fit-content;
+        background: #EC6D19;
+        border-radius: 50%;
+        margin-right: 10px; }
+        .Bag .item-selection .item-delete span {
+          width: 50px;
+          height: 50px;
+          background: url("../../assets/close.png") no-repeat;
+          position: relative;
+          top: 3px;
+          left: 4px;
+          background-size: 25px;
+          display: block; }
   .home {
     width: 100%;
     min-height: 93vh;
@@ -244,8 +316,8 @@ body {
       padding-right: 10px; }
     .filter .filter-container {
       position: absolute;
-      width: 15rem;
-      height: 17rem;
+      width: 13rem;
+      height: 13rem;
       border: 2px solid #EC6D19;
       background: #F8EDEB;
       z-index: 5;
@@ -258,12 +330,16 @@ body {
         height: 100%;
         display: flex;
         flex-direction: column;
-        text-indent: 1rem; }
+        text-indent: 1rem;
+        margin: 0 auto;
+        align-content: space-around; }
         .filter .filter-container ul li {
           padding-top: 10px;
           padding-bottom: 5px;
           border-bottom: 1px solid #EC6D19;
           cursor: pointer;
+          height: 10%;
+          width: 100%;
           margin: 1px; }
           .filter .filter-container ul li:active {
             background: #EC6D19; }
@@ -282,7 +358,8 @@ body {
       height: 100%;
       user-select: none; }
     .display-stock .display-link {
-      text-decoration: none; }
+      text-decoration: none;
+      text-align: center; }
     .display-stock .txt-white {
       color: #F8EDEB; }
     .display-stock .txt-black {

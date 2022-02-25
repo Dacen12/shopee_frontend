@@ -1,7 +1,8 @@
 exports.PATH = {
     HOME: '/',
     MEN : '/heren',
-    WOMEN: '/dames'
+    WOMEN: '/dames',
+    BAG: '/winkelwagen'
 }
 
 exports.DYNAMICPATHS = {

@@ -8,7 +8,6 @@ function DisplayStock({stock}) {
 
   function setLinkToItem(obj){
     const {id, sex} = obj
-    console.log(id, sex)
     if(sex == 'male'){
       return  `/gndr/heren/item_id=${id}`
     } else if(sex == 'female'){
@@ -30,7 +29,7 @@ function DisplayStock({stock}) {
               <img src={url} />
           </SplideSlide>
            ))}
-      {setLinkToItem(obj)}
+  
         
         </Splide>
         <div className="item-info">
@@ -40,7 +39,7 @@ function DisplayStock({stock}) {
         
         <div className="option-holder">
             <div className="price-right">€ {obj.price}<span></span></div>
-            <div className="add-to-cart"><Link className="display-link txt-white" to={setLinkToItem(obj)}>Toevoegen</Link></div>
+            <Link className="display-link txt-white" to={setLinkToItem(obj)}><div className="add-to-cart">Toevoegen</div></Link>  
         </div>
     </div>
       </div>
