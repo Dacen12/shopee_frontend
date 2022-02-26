@@ -36,7 +36,7 @@ function Item({useBag}) {
 
 
 function getItem () {
-   axios.get(`http://192.168.1.210:4040/gndr/${params.gender}/item_id=${params.item}`).then((res) => {
+   axios.get(`https://shopee-backend.herokuapp.com/gndr/${params.gender}/item_id=${params.item}`).then((res) => {
    setItemStock(res.data)  
    setItemModel(res.data.model && res.data.model)
 
