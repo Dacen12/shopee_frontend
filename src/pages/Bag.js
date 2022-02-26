@@ -4,9 +4,7 @@ import ShowRedirect from '../components/ShowRedirect'
 export default function Bag({useBag}) {
     const {bag, setBag, showBag, setShowBag, deleteFromBag} = useBag
 
-  useEffect(() => {
-    console.log(bag)
-  }, [bag])
+
 
   
     return bag.length !== 0 ?  (

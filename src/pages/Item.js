@@ -46,7 +46,6 @@ function getItem () {
 function setSizeItem(e, el){
 const {target} = e
 const setterId = target.attributes.getNamedItem('data-sizeid').value
-console.log(setterId)
 setSelectedSize({sizeId: setterId, element: el})
 }
 function Button(customclass, stockArray) {

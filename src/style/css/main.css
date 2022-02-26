@@ -386,7 +386,8 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        min-height: 14rem; }
+        min-height: 14rem;
+        max-height: 14rem; }
       .display-stock .card .splide-holder {
         overflow: hidden;
         width: 11.9rem;
@@ -953,22 +954,18 @@ body {
       animation: appearFilter 0.2s ease-out forwards;
       opacity: 0; }
       .filter .filter-container ul {
-        list-style: none;
-        width: 95%;
+        width: 100%;
         height: 100%;
-        display: flex;
-        flex-direction: column;
+        list-style: none;
         text-indent: 1rem;
-        margin: 0 auto;
-        align-content: space-around; }
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column; }
         .filter .filter-container ul li {
-          padding-top: 10px;
-          padding-bottom: 5px;
+          padding: 0.1rem;
           border-bottom: 1px solid #EC6D19;
-          cursor: pointer;
-          height: 10%;
-          width: 100%;
-          margin: 1px; }
+          margin: 0.5rem;
+          cursor: pointer; }
           .filter .filter-container ul li:active {
             background: #EC6D19; }
   .display-stock {
@@ -1003,7 +1000,8 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        min-height: 14rem; }
+        min-height: 14rem;
+        max-height: 14rem; }
       .display-stock .card .splide-holder {
         overflow: hidden;
         width: 11.9rem;
@@ -1253,3 +1251,71 @@ body {
 @keyframes appearSplideFilter {
   to {
     opacity: 1; } }
+
+@media only screen and (max-width: 425px) {
+  .display-stock {
+    width: fit-content;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 1px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: 30rem;
+    grid-auto-columns: 50% 50%; }
+    .display-stock .card-holder {
+      width: 100%;
+      height: 100%;
+      user-select: none; }
+    .display-stock .display-link {
+      text-decoration: none;
+      text-align: center; }
+    .display-stock .txt-white {
+      color: #F8EDEB; }
+    .display-stock .txt-black {
+      color: #000000; }
+    .display-stock .card {
+      width: fit-content;
+      height: 95%;
+      overflow: hidden;
+      margin: 0 auto;
+      display: grid;
+      grid-template-rows: 60% 15% 25%; }
+      .display-stock .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        min-height: 14rem;
+        max-height: 14rem; }
+      .display-stock .card .splide-holder {
+        overflow: hidden;
+        width: 11.9rem;
+        height: 100%;
+        margin: 0 auto; }
+      .display-stock .card .splide-wave {
+        width: 100%;
+        height: 100%; }
+      .display-stock .card .item-info span {
+        display: block; }
+      .display-stock .card .item-info .item-brand {
+        margin-bottom: 10px; }
+      .display-stock .card .option-holder {
+        display: flex;
+        flex-direction: column; }
+        .display-stock .card .option-holder .price-right {
+          display: flex;
+          padding-right: 18px;
+          height: 60px;
+          align-self: flex-end;
+          user-select: none; }
+          .display-stock .card .option-holder .price-right span {
+            font-size: 14pt; }
+        .display-stock .card .option-holder .add-to-cart {
+          color: #F8EDEB;
+          margin: 0 auto;
+          background: #EC6D19;
+          padding: 10px;
+          text-decoration: none;
+          cursor: pointer; }
+          .display-stock .card .option-holder .add-to-cart:active {
+            background: orange;
+            user-select: none; } }
