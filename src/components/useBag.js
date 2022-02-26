@@ -45,7 +45,6 @@ function useBag() {
 
   useEffect(() => {
     setItem()
-    console.log(window.localStorage.getItem('cart'))
   }, [bag])
 
   const bagOptions = {
