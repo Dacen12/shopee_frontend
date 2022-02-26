@@ -1256,12 +1256,14 @@ body {
   .display-stock {
     width: fit-content;
     height: 100%;
+    max-width: fit-content;
     margin: 0 auto;
     padding-bottom: 1px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-auto-rows: 30rem;
-    grid-auto-columns: 50% 50%; }
+    grid-auto-columns: 50% 50%;
+    border: 1px solid black; }
     .display-stock .card-holder {
       width: 100%;
       height: 100%;
@@ -1288,7 +1290,7 @@ body {
         max-height: 14rem; }
       .display-stock .card .splide-holder {
         overflow: hidden;
-        width: 11.9rem;
+        width: 90%;
         height: 100%;
         margin: 0 auto; }
       .display-stock .card .splide-wave {
@@ -1314,8 +1316,87 @@ body {
           margin: 0 auto;
           background: #EC6D19;
           padding: 10px;
+          width: 90%;
           text-decoration: none;
           cursor: pointer; }
           .display-stock .card .option-holder .add-to-cart:active {
             background: orange;
             user-select: none; } }
+
+@media only screen and (max-width: 371px) {
+  .Bag {
+    width: 100%;
+    height: 100vh; }
+    .Bag .display-crumbs {
+      width: 100%;
+      height: fit-content; }
+    .Bag .bag-wrapper {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 100%;
+      grid-template-rows: 6rem;
+      grid-auto-rows: max-content;
+      grid-auto-columns: 100%;
+      gap: 20px; }
+    .Bag .item-container {
+      width: 100%;
+      height: 95%;
+      align-self: center;
+      align-items: center;
+      display: flex;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #EC6D19; }
+    .Bag .image-container {
+      width: 100%;
+      height: 95%;
+      max-width: 5rem;
+      min-width: 5rem;
+      overflow: hidden;
+      margin-left: 0.4rem; }
+      .Bag .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+    .Bag .item-start {
+      width: 100%;
+      height: 95%; }
+      .Bag .item-start .item-brand {
+        width: 100%;
+        text-indent: 1rem; }
+      .Bag .item-start .item-model {
+        width: 100%;
+        min-width: 9rem;
+        text-indent: 1rem;
+        padding-bottom: 0.6rem;
+        max-width: fit-content;
+        padding-right: 10px; }
+        .Bag .item-start .item-model span {
+          font-size: 12pt; }
+      .Bag .item-start .item-price {
+        text-indent: 1rem; }
+    .Bag .item-selection {
+      width: 100%;
+      height: 100%;
+      max-width: fit-content;
+      display: flex;
+      justify-content: right;
+      align-items: center; }
+      .Bag .item-selection .item-delete {
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        max-height: fit-content;
+        max-width: fit-content;
+        background: #EC6D19;
+        border-radius: 50%;
+        margin-right: 10px; }
+        .Bag .item-selection .item-delete span {
+          width: 50px;
+          height: 50px;
+          background: url("../../assets/close.png") no-repeat;
+          position: relative;
+          top: 3px;
+          left: 4px;
+          background-size: 25px;
+          display: block; } }
