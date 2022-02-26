@@ -9,8 +9,6 @@ import Men from "./pages/Men";
 import Item from "./pages/Item";
 import useBag from "./components/useBag";
 import Bag from "./pages/Bag";
-
-
 function App() {
   const [{stockData, setStockData}, {modifiedArray, setModifiedArray}] = useData()
   const bagOptions = useBag()

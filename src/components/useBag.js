@@ -37,9 +37,9 @@ function useBag() {
   }
  
 
-  function deleteFromBag(itemId){
-    const returnLeftOver = bag.filter(obj => obj.id !== itemId)
-    console.log(returnLeftOver)
+  function deleteFromBag(itemModel){
+    const returnLeftOver = bag.filter(obj => obj.model !== itemModel)
+  
     setBag(returnLeftOver)
   }
 

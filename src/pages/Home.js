@@ -8,7 +8,8 @@ function Home({data}) {
 
 
     return <div className="home">
-    <Filter stock={{stockData, setStockData , modifiedArray, setModifiedArray}} />
+        <Filter stock={{stockData, setStockData , modifiedArray, setModifiedArray}} />
+
     <DisplayStock stock={{modifiedArray, setModifiedArray, stockData}} />
     </div>
   
