@@ -17,7 +17,6 @@ function useBag() {
       for (var size of getSizeReq){
         selectedSize.size = size.element 
       }
-
       return selectedSize
     }
 
@@ -30,7 +29,11 @@ function useBag() {
       const sizeValue = sameSize(itemObj) //42, XS, M, 27x30
       bag.forEach((obj) => {
         obj.size.push({sizeId: makeId(3), element: sizeValue})
+        if(obj.model == itemObj.model){
+          obj.amount += 1
+        }
       })
+      
   } else {
       setBag(prevValue => ([...prevValue, itemObj]))
     }
@@ -45,8 +48,12 @@ function useBag() {
 
   useEffect(() => {
     setItem()
+    console.log(bag)
   }, [bag])
 
+
+
+  // export function 
   const bagOptions = {
     bag,
     addToBag,

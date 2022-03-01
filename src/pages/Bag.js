@@ -32,11 +32,15 @@ export default function Bag({useBag}) {
               </div>
             </div>
 
+            <div className="amount">
+              <span>Aantal: {item.amount}</span>
+            </div>
             <div className="item-selection">
               <div className="item-delete">
                 <span onClick={() => deleteFromBag(item.model)}></span>
               </div>
             </div>
+           
         </div>
         ))}
 

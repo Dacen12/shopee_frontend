@@ -19,6 +19,54 @@ body {
 .hider {
   display: none; }
 
+.home-loader {
+  margin: 0 auto;
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .home-loader img {
+    width: 150px;
+    margin-top: 1rem; }
+
+.display-error {
+  width: fit-content;
+  height: fit-content;
+  min-width: 5rem;
+  min-height: 3rem;
+  background: #f72c2c;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1rem;
+  color: #F8EDEB;
+  opacity: 0;
+  animation: display-error 0.4s ease-in forwards;
+  user-select: none; }
+
+@keyframes display-error {
+  to {
+    opacity: 1; } }
+
+.cart-button {
+  width: 100%;
+  height: 100%;
+  border-radius: 5pt;
+  min-height: 3rem;
+  max-height: 3rem;
+  max-width: 16rem;
+  margin-top: 1rem;
+  background: #EC6D19;
+  border: none;
+  color: #F8EDEB;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem; }
+  .cart-button:hover {
+    background: #d49623;
+    transition: background 0.2s ease-out; }
+
 .nav {
   width: 100vw;
   height: 10rem;
@@ -129,42 +177,21 @@ body {
           padding-bottom: 0.5rem;
           margin-left: 1rem; }
       .nav .navigator .menu-men {
-        width: 95%;
+        width: 100%;
         height: 100%;
-        min-height: 5rem;
-        display: flex;
-        align-items: center; }
+        text-align: center; }
         .nav .navigator .menu-men span {
-          width: 95%;
-          display: flex;
-          height: 20%;
-          font-size: large;
-          justify-content: flex-end;
-          color: black;
-          border-bottom: 1px solid #EC6D19;
-          line-height: 1rem;
-          user-select: none;
-          padding-bottom: 0.5rem;
-          margin-left: 1rem;
-          cursor: pointer; }
+          font-size: large; }
+          .nav .navigator .menu-men span .link {
+            font-size: 18pt; }
       .nav .navigator .menu-women {
-        width: 95%;
+        width: 100%;
         height: 100%;
-        min-height: 5rem;
-        display: flex;
-        align-items: center; }
+        text-align: center; }
         .nav .navigator .menu-women span {
-          width: 95%;
-          display: flex;
-          height: 20%;
-          font-size: large;
-          justify-content: flex-end;
-          border-bottom: 1px solid #EC6D19;
-          line-height: 1rem;
-          padding-bottom: 0.5rem;
-          cursor: pointer;
-          user-select: none;
-          margin-left: 1rem; }
+          font-size: large; }
+          .nav .navigator .menu-women span .link {
+            font-size: 18pt; }
   @keyframes showNavigator {
     to {
       opacity: 1; } }
@@ -183,7 +210,7 @@ body {
       padding: 1rem;
       display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: 6rem;
+      grid-template-rows: 7rem;
       grid-auto-rows: max-content;
       grid-auto-columns: 100%;
       gap: 20px; }
@@ -298,6 +325,7 @@ body {
           max-width: 150px;
           grid-template-columns: 70% 30%;
           grid-template-rows: 100%;
+          border-radius: 10px;
           margin-left: 1rem;
           animation: appearSplideFilter 0.2s ease-in forwards;
           opacity: 0; }
@@ -418,7 +446,8 @@ body {
           padding: 10px;
           max-width: 50%;
           text-decoration: none;
-          cursor: pointer; }
+          cursor: pointer;
+          border-radius: 10px; }
           .display-stock .card .option-holder .add-to-cart:active {
             background: orange;
             user-select: none; }
@@ -496,7 +525,7 @@ body {
         width: 100%;
         text-align: center; }
   .Item {
-    width: 100vw;
+    width: 100%;
     height: 85vh;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -504,29 +533,34 @@ body {
     .Item .img-frame {
       width: 100%;
       height: 100%;
-      border: 2px solid #EC6D19;
       display: flex;
       align-items: center;
       justify-content: center; }
       .Item .img-frame .splide-container {
-        width: 90%;
-        height: 90%;
+        width: 100%;
+        height: 100%;
+        max-width: 35rem;
+        min-height: fit-content;
+        background: url("../../assets/shopeelogo.jpg") no-repeat;
+        background-size: cover;
+        background-position: center;
         overflow: hidden; }
         .Item .img-frame .splide-container .splide-images {
           width: 100%;
-          height: 100%;
-          overflow: hidden; }
+          height: fit-content;
+          overflow: hidden;
+          display: flex; }
         .Item .img-frame .splide-container .img-slide {
           width: 100%;
-          height: 100%;
-          object-fit: cover; }
+          object-fit: cover;
+          height: 60rem; }
     .Item .info-item {
       width: 100%;
       height: 100%;
-      min-height: 54rem;
+      min-height: 100%;
       display: grid;
       grid-template-columns: 100%;
-      grid-template-rows: repeat(3, 33%); }
+      grid-template-rows: 30% 20% 50%; }
       .Item .info-item .info-brand {
         min-height: 17rem;
         display: flex;
@@ -557,7 +591,8 @@ body {
       height: 100%;
       display: flex;
       flex-direction: column;
-      min-height: 17rem; }
+      min-height: fit-content;
+      max-height: fit-content; }
       .Item .class-price .item-show-price {
         width: 50%;
         align-self: center;
@@ -575,42 +610,37 @@ body {
         .Item .class-price .item-price span {
           font-size: 20pt; }
     .Item .size-outer-container {
-      display: flex;
       width: 100%;
       height: 100%; }
       .Item .size-outer-container .size-container {
-        width: 100%;
-        height: 100%;
-        align-self: center;
         text-align: center;
+        height: 100%;
         display: flex;
         flex-direction: column; }
         .Item .size-outer-container .size-container .s-i {
-          width: 10rem;
+          font-size: 18pt;
+          border-bottom: 2px solid #EC6D19;
           padding-bottom: 1rem;
-          border-bottom: 1px solid #EC6D19;
-          height: fit-content;
-          margin: 0 auto;
-          font-size: 20pt;
-          display: block; }
+          width: 20%;
+          margin: 0 auto; }
         .Item .size-outer-container .size-container .size {
+          height: 100%;
+          margin-top: 1rem;
           width: 100%;
-          height: 5rem;
+          text-align: center;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center; }
+        .Item .size-outer-container .size-container .sizebox {
+          border: 2px solid #EC6D19;
+          width: 100%;
+          height: 100%;
+          max-width: 4em;
+          max-height: 4rem;
           display: flex;
           justify-content: center;
           align-items: center;
-          margin-top: 0.5rem; }
-          .Item .size-outer-container .size-container .size .sizebox {
-            padding: 1.5rem;
-            border: 1px solid #EC6D19;
-            height: fit-content;
-            width: fit-content;
-            font-size: 18pt;
-            margin-left: 1rem;
-            margin-right: 1rem;
-            width: 100%;
-            max-width: fit-content;
-            cursor: pointer; }
+          cursor: pointer; }
         .Item .size-outer-container .size-container .set-selected-size {
           background: #EC6D19;
           color: white;
@@ -622,11 +652,12 @@ body {
       color: #F8EDEB;
       border: 1px solid white; } }
     .Item .with-size {
-      width: 100%;
-      height: 100%;
       display: flex;
-      justify-content: center;
-      align-items: center; }
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
     .Item .cart-button {
       width: 100%;
       height: 100%;
@@ -674,7 +705,7 @@ body {
   .nav {
     width: 100%;
     height: 7vh;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 4rem;
     background: #EC6D19;
     display: flex; }
@@ -707,7 +738,8 @@ body {
           display: block;
           background-size: 25px;
           width: 50%;
-          height: 60%; }
+          height: 60%;
+          cursor: pointer; }
       .nav .container__menu {
         width: 100%;
         height: 100%;
@@ -757,47 +789,26 @@ body {
           padding-bottom: 0.5rem;
           margin-left: 1rem; }
       .nav .navigator .menu-men {
-        width: 95%;
+        width: 100%;
         height: 100%;
-        min-height: 5rem;
-        display: flex;
-        align-items: center; }
+        text-align: center; }
         .nav .navigator .menu-men span {
-          width: 95%;
-          display: flex;
-          height: 20%;
-          font-size: large;
-          justify-content: flex-end;
-          color: black;
-          border-bottom: 1px solid #EC6D19;
-          line-height: 1rem;
-          user-select: none;
-          padding-bottom: 0.5rem;
-          margin-left: 1rem;
-          cursor: pointer; }
+          font-size: large; }
+          .nav .navigator .menu-men span .link {
+            font-size: 18pt; }
       .nav .navigator .menu-women {
-        width: 95%;
+        width: 100%;
         height: 100%;
-        min-height: 5rem;
-        display: flex;
-        align-items: center; }
+        text-align: center; }
         .nav .navigator .menu-women span {
-          width: 95%;
-          display: flex;
-          height: 20%;
-          font-size: large;
-          justify-content: flex-end;
-          border-bottom: 1px solid #EC6D19;
-          line-height: 1rem;
-          padding-bottom: 0.5rem;
-          cursor: pointer;
-          user-select: none;
-          margin-left: 1rem; }
+          font-size: large; }
+          .nav .navigator .menu-women span .link {
+            font-size: 18pt; }
   @keyframes showNavigator {
     to {
       opacity: 1; } }
   .Bag {
-    width: 100vw;
+    width: 100%;
     height: 100vh; }
     .Bag .display-crumbs {
       width: 100%;
@@ -812,13 +823,17 @@ body {
       grid-auto-columns: 100%;
       gap: 20px; }
     .Bag .item-container {
-      width: 100%;
+      width: 95%;
       height: 95%;
+      min-height: 6rem;
+      max-height: 6rem;
+      margin: 0 auto;
       align-self: center;
       align-items: center;
       display: flex;
       padding-bottom: 6px;
-      border-bottom: 1px solid #EC6D19; }
+      border-bottom: 1px solid #EC6D19;
+      user-select: none; }
     .Bag .image-container {
       width: 100%;
       height: 95%;
@@ -835,14 +850,17 @@ body {
       height: 95%; }
       .Bag .item-start .item-brand {
         width: 100%;
-        text-indent: 1rem;
-        padding-bottom: 0.5rem; }
+        text-indent: 1rem; }
       .Bag .item-start .item-model {
         width: 100%;
-        min-width: 9rem;
-        text-indent: 1rem;
-        padding-bottom: 0.6rem;
+        min-width: fit-content;
+        border: 1px solid black;
+        font-size: 10pt;
         max-width: fit-content;
+        min-height: fit-content;
+        height: fit-content;
+        margin-left: 1rem;
+        padding-bottom: 1rem;
         padding-right: 10px; }
         .Bag .item-start .item-model span {
           font-size: 12pt; }
@@ -863,7 +881,8 @@ body {
         max-width: fit-content;
         background: #EC6D19;
         border-radius: 50%;
-        margin-right: 10px; }
+        margin-right: 10px;
+        cursor: pointer; }
         .Bag .item-selection .item-delete span {
           width: 50px;
           height: 50px;
@@ -917,7 +936,8 @@ body {
           grid-template-rows: 100%;
           margin-left: 1rem;
           animation: appearSplideFilter 0.2s ease-in forwards;
-          opacity: 0; }
+          opacity: 0;
+          border-radius: 15px; }
           .filter__container .splide-container .asplide .attr-span {
             cursor: pointer;
             height: fit-content;
@@ -942,7 +962,8 @@ body {
       background-size: 35px;
       align-self: center;
       justify-self: center;
-      padding-right: 10px; }
+      padding-right: 10px;
+      cursor: pointer; }
     .filter .filter-container {
       position: absolute;
       width: 13rem;
@@ -1031,7 +1052,8 @@ body {
           background: #EC6D19;
           padding: 10px;
           text-decoration: none;
-          cursor: pointer; }
+          cursor: pointer;
+          border-radius: 10px; }
           .display-stock .card .option-holder .add-to-cart:active {
             background: orange;
             user-select: none; }
@@ -1084,7 +1106,9 @@ body {
     text-decoration: none;
     text-decoration-style: none; }
   .link {
-    text-decoration: none; }
+    text-decoration: none;
+    width: inherit;
+    height: inherit; }
   .error-container {
     width: 100%;
     height: 15rem;
@@ -1110,14 +1134,14 @@ body {
         text-align: center; }
   .Item {
     width: 100%;
-    height: 100%;
+    height: fit-content;
     min-height: 50rem;
-    max-height: 50rem;
+    max-height: fit-content;
     margin-top: 2rem;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 65% 35%;
-    padding-bottom: 1rem; }
+    grid-template-rows: 65% 20rem;
+    padding-bottom: 4rem; }
     .Item .img-frame {
       width: 100%;
       max-width: 20rem;
@@ -1145,7 +1169,6 @@ body {
     .Item .img-slide {
       width: 100%;
       object-fit: cover;
-      height: 100%;
       height: 30rem; }
   .info-item {
     width: 100%;
@@ -1169,33 +1192,33 @@ body {
       max-height: 2.5rem;
       min-height: 2.5rem;
       display: flex;
-      place-items: center; }
+      place-items: center;
+      justify-content: end; }
       .info-item .class-price span {
         font-size: 17pt;
         padding: 5px;
-        width: 95%;
-        text-align: end; }
+        width: 95%; }
     .info-item .size-outer-container {
       width: 90%;
-      height: 90%;
+      height: 100%;
       min-width: 15rem;
       max-width: 30rem;
-      max-height: 10rem;
-      min-height: 10rem;
+      max-height: 15rem;
+      min-height: 15rem;
       margin: 0 auto;
       display: flex; }
       .info-item .size-outer-container .size-container {
         width: 100%;
-        height: 90%;
+        height: 100%;
+        max-height: fit-content;
         align-self: center;
         display: grid;
-        grid-template-rows: 33% 33% 33%;
+        grid-template-rows: 33% 10% 57%;
         grid-template-columns: 100%; }
         .info-item .size-outer-container .size-container .s-i {
           width: 30%;
           height: fit-content;
           padding-bottom: 0.2rem;
-          border-bottom: 1px solid #EC6D19;
           text-align: center;
           user-select: none;
           font-size: 16pt;
@@ -1204,7 +1227,9 @@ body {
         .info-item .size-outer-container .size-container .size {
           display: flex;
           gap: 1rem;
-          justify-content: center; }
+          justify-content: center;
+          position: relative;
+          bottom: 1rem; }
           .info-item .size-outer-container .size-container .size .sizebox {
             border: 1px solid #EC6D19;
             width: fit-content;
@@ -1222,27 +1247,17 @@ body {
       background: #EC6D19; } }
     .info-item .with-size {
       display: flex;
-      justify-content: center; }
+      justify-content: flex-end;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
     .info-item .without-size {
       width: 100%;
       height: 100%;
       display: flex;
       justify-content: center;
-      align-items: center; }
-    .info-item .cart-button {
-      width: 100%;
-      height: 100%;
-      min-height: 3rem;
-      max-height: 3rem;
-      max-width: 16rem;
-      margin-top: 1rem;
-      background: #EC6D19;
-      border: none;
-      color: #F8EDEB;
-      cursor: pointer; }
-      .info-item .cart-button:hover {
-        background: #d49623;
-        transition: background 0.2s ease-out; } }
+      align-items: center; } }
 
 @keyframes appearFilter {
   to {
@@ -1262,8 +1277,7 @@ body {
     display: grid;
     grid-template-columns: 50% 50%;
     grid-auto-rows: 30rem;
-    grid-auto-columns: 50% 50%;
-    border: 1px solid black; }
+    grid-auto-columns: 50% 50%; }
     .display-stock .card-holder {
       width: 100%;
       height: 100%;
