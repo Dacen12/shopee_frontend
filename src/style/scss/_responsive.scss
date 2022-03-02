@@ -180,8 +180,9 @@
 .Bag{
 
     width: 100%;
-    height: 100vh;
-    
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
     .display-crumbs{
       width: 100%;
       height: fit-content;
@@ -189,117 +190,149 @@
 
     .bag-wrapper{
       width: 100%;
-      height: 100%;
-
+      height: fit-content;
+      min-height: 5rem;
+      padding-bottom: 2rem;
       display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 6rem;
-      grid-auto-rows: max-content;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 25rem;
+      grid-auto-rows: 25rem;
       grid-auto-columns: 100%;
-      gap: 20px;
+
     }
 
     .item-container{
-      width: 95%;
-      height: 95%;
-      min-height: 6rem;
-      max-height: 6rem;
-      margin: 0 auto;
-      align-self: center;
-      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
       display: flex;
-      padding-bottom: 6px;
-      border-bottom: 1px solid $shopee-orange;
-      user-select: none;
+      min-width: 12rem;
+      max-width: 15rem;
+      margin: 0 auto;
+      flex-direction: column;
+      span{font-size: 10pt;}
+     
     }
-    
 
     .image-container{
       width: 100%;
-      height: 95%;
-      max-width: 5rem;
-      min-width: 5rem;
-
+      height: 50%;
       overflow: hidden;
-      margin-left: 0.4rem;
-
+      justify-self: center;
       img{
         width: 100%;
         height: 100%;
         object-fit: cover;
+        max-width: 15rem;
+        min-width: 12rem;
       }
-
     }
 
     .item-start{
       width: 100%;
-      height: 95%;
-      
-      .item-brand{
-
-        width: 100%;
-        text-indent: 1rem;
-      }
       .item-model{
-
-        width: 100%;
-        min-width: fit-content;
-        border: 1px solid black;
-        font-size: 10pt;
-        max-width: fit-content;
-        min-height: fit-content;
-        height: fit-content;
-        margin-left: 1rem;
-        padding-bottom: 1rem;
-        span{
-          font-size: 12pt;
-        }
-        padding-right: 10px;
-      }
-
-      .item-price{
-        text-indent: 1rem;
-        
+       span{
+         font-size: 8pt;
+       }
+       max-height: 1rem;
       }
     }
 
-    .item-selection{
+  
+
+    
+    .item-price{
+      position: relative;
       width: 100%;
-      height: 100%;
-      max-width: fit-content;
-      display: flex;
-      justify-content: right;
-      align-items: center;
+      text-align: end;
+      height: fit-content;
+      bottom: -1.2rem;
 
-      .item-delete{
- 
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        max-height: fit-content;
-        max-width: fit-content;
-        background: $shopee-orange;
-        border-radius: 50%;
-        margin-right: 10px;
-        cursor: pointer;
-        ;
-        
-        span{
-          width: 50px;
-          height: 50px;
-          background: url('../../assets/close.png') no-repeat;
-          position: relative;
-          top: 3px;
-          left: 4px;
-          background-size: 25px;
-          display: block;
-        }
+      left: 1rem;
+    }
+    .total{
+      user-select: none;
+    }
+
+    .delete{
+      position: relative;
+      cursor: pointer;
+      color: $shopee-orange;
+      text-decoration: underline;
+      bottom: -4rem;
+      left: 7rem;
+      width: fit-content;
+      :active{
+        outline: none;
       }
     }
 
+    .change-amount{
+      cursor: pointer;
+    }
+
+    .select{
+      border: 1px solid $shopee-orange;
+      background: none;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer;
+      
+      .first-option{
+        font-size: 14pt;
+        text-align: center;
+        background: red;
+      }
+    }
+
+    .order{
+      width: 50%;
+      height: 2rem;
+      max-width:10rem;
+      margin: 0 auto;
+      border: none;
+      background: $shopee-orange;
+      border-radius: 10px;
+      position: relative;
+      bottom: 1rem;
+      color: $beige;
+      cursor: pointer;
+       transition: background 0.1s ease-in; 
+      &:active{
+         background: orange;
+        transform: translate(-0%, -3%);
+       outline: none;  
+       }
+    
+    }
   } 
 
+  .order-complete{
+    width: 100%;
+    height: 100%;
+    min-height: 20rem;
+    margin-top: 10rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span{
+      display: block;
+      &:nth-child(3){
+        span{
+          display: block;
+          color: $shopee-orange;
+        }
+      }
+    }
 
+    i{
+      color: $shopee-orange;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    
+  }
   .home{
 
     width: 100%;

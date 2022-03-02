@@ -41,6 +41,7 @@ function Item({useBag}) {
       price: stockArray.price,
       image_url: stockArray.image_url && stockArray.image_url[0],
       size: [{sizeId: makeId(3), selectedSize}],
+      actual_price: stockArray.actual_price,
       amount: 1
     }
 

@@ -197,90 +197,119 @@ body {
       opacity: 1; } }
   .Bag {
     width: 100%;
-    height: 100vh; }
+    height: fit-content;
+    display: flex;
+    flex-direction: column; }
     .Bag .display-crumbs {
       width: 100%;
       height: fit-content; }
     .Bag .bag-wrapper {
       width: 100%;
       height: fit-content;
-      max-width: 50%;
-      margin: 0 auto;
-      border: 1px solid #EC6D19;
-      padding: 1rem;
+      min-height: 5rem;
+      padding-bottom: 2rem;
       display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 7rem;
-      grid-auto-rows: max-content;
-      grid-auto-columns: 100%;
-      gap: 20px; }
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 25rem;
+      grid-auto-rows: 25rem;
+      grid-auto-columns: 100%; }
     .Bag .item-container {
-      opacity: 0;
       width: 100%;
-      height: 95%;
-      align-self: center;
-      align-items: center;
+      height: 100%;
+      padding: 1rem;
       display: flex;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #EC6D19;
-      animation: add-item 0.2s ease-in forwards; }
-  @keyframes add-item {
-    to {
-      opacity: 1; } }
+      background: linear-gradient(#EC6D19, #F8EDEB);
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      min-width: 12rem;
+      max-width: 15rem;
+      margin: 0 auto;
+      flex-direction: column; }
+      .Bag .item-container span {
+        font-size: 10pt; }
     .Bag .image-container {
       width: 100%;
-      height: 95%;
-      max-width: 5rem;
-      min-width: 5rem;
+      height: 50%;
       overflow: hidden;
-      margin-left: 0.4rem; }
+      justify-self: center; }
       .Bag .image-container img {
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        max-width: 15rem;
+        min-width: 12rem; }
     .Bag .item-start {
-      width: 100%;
-      height: 95%; }
-      .Bag .item-start .item-brand {
-        width: 100%;
-        text-indent: 1rem;
-        padding-bottom: 0.5rem; }
+      width: 100%; }
       .Bag .item-start .item-model {
-        width: 100%;
-        min-width: 9rem;
-        text-indent: 1rem;
-        padding-bottom: 0.6rem;
-        max-width: fit-content;
-        padding-right: 10px; }
+        max-height: 1rem; }
         .Bag .item-start .item-model span {
-          font-size: 12pt; }
-      .Bag .item-start .item-price {
-        text-indent: 1rem; }
-    .Bag .item-selection {
+          font-size: 8pt; }
+    .Bag .item-price {
+      position: relative;
       width: 100%;
-      height: 100%;
-      max-width: fit-content;
-      display: flex;
-      justify-content: right;
-      align-items: center; }
-      .Bag .item-selection .item-delete {
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        max-height: fit-content;
-        max-width: fit-content;
-        background: #EC6D19;
-        border-radius: 50%;
-        margin-right: 10px; }
-        .Bag .item-selection .item-delete span {
-          width: 50px;
-          height: 50px;
-          background: url("../../assets/close.png") no-repeat;
-          position: relative;
-          top: 3px;
-          left: 4px;
-          background-size: 25px;
-          display: block; }
+      text-align: end;
+      height: fit-content;
+      bottom: -1.2rem;
+      left: 1rem; }
+    .Bag .total {
+      user-select: none; }
+    .Bag .delete {
+      position: relative;
+      cursor: pointer;
+      color: #EC6D19;
+      text-decoration: underline;
+      bottom: -4rem;
+      left: 7rem;
+      width: fit-content; }
+      .Bag .delete :active {
+        outline: none; }
+    .Bag .change-amount {
+      cursor: pointer; }
+    .Bag .select {
+      border: 1px solid #EC6D19;
+      background: none;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer; }
+      .Bag .select .first-option {
+        font-size: 14pt;
+        text-align: center;
+        background: red; }
+    .Bag .order {
+      width: 50%;
+      height: 2rem;
+      max-width: 10rem;
+      margin: 0 auto;
+      border: none;
+      background: #EC6D19;
+      border-radius: 10px;
+      position: relative;
+      bottom: 1rem;
+      color: #F8EDEB;
+      cursor: pointer;
+      transition: background 0.1s ease-in; }
+      .Bag .order:active {
+        background: orange;
+        transform: translate(0%, -3%);
+        outline: none; }
+  .order-complete {
+    width: 100%;
+    height: 100%;
+    min-height: 20rem;
+    margin-top: 10rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .order-complete span {
+      display: block; }
+      .order-complete span:nth-child(3) span {
+        display: block;
+        color: #EC6D19; }
+    .order-complete i {
+      color: #EC6D19;
+      text-decoration: underline;
+      cursor: pointer; }
   .home {
     width: 100%;
     min-height: 93vh;
@@ -428,6 +457,8 @@ body {
         display: block; }
       .display-stock .card .item-info .item-brand {
         margin-bottom: 10px; }
+      .display-stock .card .item-info .item-model span {
+        font-size: 10pt; }
       .display-stock .card .option-holder {
         display: flex;
         flex-direction: column; }
@@ -809,89 +840,116 @@ body {
       opacity: 1; } }
   .Bag {
     width: 100%;
-    height: 100vh; }
+    height: fit-content;
+    display: flex;
+    flex-direction: column; }
     .Bag .display-crumbs {
       width: 100%;
       height: fit-content; }
     .Bag .bag-wrapper {
       width: 100%;
-      height: 100%;
+      height: fit-content;
+      min-height: 5rem;
+      padding-bottom: 2rem;
       display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 6rem;
-      grid-auto-rows: max-content;
-      grid-auto-columns: 100%;
-      gap: 20px; }
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 25rem;
+      grid-auto-rows: 25rem;
+      grid-auto-columns: 100%; }
     .Bag .item-container {
-      width: 95%;
-      height: 95%;
-      min-height: 6rem;
-      max-height: 6rem;
-      margin: 0 auto;
-      align-self: center;
-      align-items: center;
+      width: 100%;
+      height: 100%;
+      padding: 1rem;
       display: flex;
-      padding-bottom: 6px;
-      border-bottom: 1px solid #EC6D19;
-      user-select: none; }
+      min-width: 12rem;
+      max-width: 15rem;
+      margin: 0 auto;
+      flex-direction: column; }
+      .Bag .item-container span {
+        font-size: 10pt; }
     .Bag .image-container {
       width: 100%;
-      height: 95%;
-      max-width: 5rem;
-      min-width: 5rem;
+      height: 50%;
       overflow: hidden;
-      margin-left: 0.4rem; }
+      justify-self: center; }
       .Bag .image-container img {
         width: 100%;
         height: 100%;
-        object-fit: cover; }
+        object-fit: cover;
+        max-width: 15rem;
+        min-width: 12rem; }
     .Bag .item-start {
-      width: 100%;
-      height: 95%; }
-      .Bag .item-start .item-brand {
-        width: 100%;
-        text-indent: 1rem; }
+      width: 100%; }
       .Bag .item-start .item-model {
-        width: 100%;
-        min-width: fit-content;
-        border: 1px solid black;
-        font-size: 10pt;
-        max-width: fit-content;
-        min-height: fit-content;
-        height: fit-content;
-        margin-left: 1rem;
-        padding-bottom: 1rem;
-        padding-right: 10px; }
+        max-height: 1rem; }
         .Bag .item-start .item-model span {
-          font-size: 12pt; }
-      .Bag .item-start .item-price {
-        text-indent: 1rem; }
-    .Bag .item-selection {
+          font-size: 8pt; }
+    .Bag .item-price {
+      position: relative;
       width: 100%;
-      height: 100%;
-      max-width: fit-content;
-      display: flex;
-      justify-content: right;
-      align-items: center; }
-      .Bag .item-selection .item-delete {
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        max-height: fit-content;
-        max-width: fit-content;
-        background: #EC6D19;
-        border-radius: 50%;
-        margin-right: 10px;
-        cursor: pointer; }
-        .Bag .item-selection .item-delete span {
-          width: 50px;
-          height: 50px;
-          background: url("../../assets/close.png") no-repeat;
-          position: relative;
-          top: 3px;
-          left: 4px;
-          background-size: 25px;
-          display: block; }
+      text-align: end;
+      height: fit-content;
+      bottom: -1.2rem;
+      left: 1rem; }
+    .Bag .total {
+      user-select: none; }
+    .Bag .delete {
+      position: relative;
+      cursor: pointer;
+      color: #EC6D19;
+      text-decoration: underline;
+      bottom: -4rem;
+      left: 7rem;
+      width: fit-content; }
+      .Bag .delete :active {
+        outline: none; }
+    .Bag .change-amount {
+      cursor: pointer; }
+    .Bag .select {
+      border: 1px solid #EC6D19;
+      background: none;
+      border-radius: 10px;
+      outline: none;
+      cursor: pointer; }
+      .Bag .select .first-option {
+        font-size: 14pt;
+        text-align: center;
+        background: red; }
+    .Bag .order {
+      width: 50%;
+      height: 2rem;
+      max-width: 10rem;
+      margin: 0 auto;
+      border: none;
+      background: #EC6D19;
+      border-radius: 10px;
+      position: relative;
+      bottom: 1rem;
+      color: #F8EDEB;
+      cursor: pointer;
+      transition: background 0.1s ease-in; }
+      .Bag .order:active {
+        background: orange;
+        transform: translate(0%, -3%);
+        outline: none; }
+  .order-complete {
+    width: 100%;
+    height: 100%;
+    min-height: 20rem;
+    margin-top: 10rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .order-complete span {
+      display: block; }
+      .order-complete span:nth-child(3) span {
+        display: block;
+        color: #EC6D19; }
+    .order-complete i {
+      color: #EC6D19;
+      text-decoration: underline;
+      cursor: pointer; }
   .home {
     width: 100%;
     min-height: 93vh;

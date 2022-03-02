@@ -1,5 +1,6 @@
 import React,{useEffect, useState} from 'react'
 import { makeId } from '../misc/makeid'
+import axios from 'axios'
 function useBag() {
   const [bag, setBag] = useState([])
   // bag array structure: {[id: 0, brand: '', model: '', image_url: '', size: [{sizeId: '', selectedSize: ''}], amount: 0}]
@@ -20,7 +21,13 @@ function useBag() {
       return selectedSize
     }
 
-
+    function changeAmount(e, item){
+      const getAmount = e.target.value
+     
+      const newState = bag.map(obj => obj.model == item.model ? {...obj, amount : getAmount } : obj)
+      console.log(newState)
+      setBag(newState)
+    }
 
   function addToBag(itemObj){
     const itemExists = bag.some(obj => obj.model== itemObj.model)
@@ -29,9 +36,6 @@ function useBag() {
       const sizeValue = sameSize(itemObj) //42, XS, M, 27x30
       bag.forEach((obj) => {
         obj.size.push({sizeId: makeId(3), element: sizeValue})
-        if(obj.model == itemObj.model){
-          obj.amount += 1
-        }
       })
       
   } else {
@@ -52,6 +56,12 @@ function useBag() {
   }, [bag])
 
 
+  function generatePdf () {
+    axios.get('http//192.168.1.210:4040/pdf', {
+      bag
+    })
+  }
+
 
   // export function 
   const bagOptions = {
@@ -59,7 +69,9 @@ function useBag() {
     addToBag,
     showBag,
     setShowBag,
-    deleteFromBag
+    deleteFromBag,
+    changeAmount,
+    generatePdf
   }
 
   return bagOptions
