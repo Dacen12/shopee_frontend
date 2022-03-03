@@ -465,115 +465,84 @@
 
 
   .display-stock{
-    width: 95%;
-    height: 100%;
-    min-height: fit-content;
-    //  change min height to fit content
-    margin: 0 auto;
- 
-    padding-bottom: 1px;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-auto-rows: 30rem;
-    grid-auto-columns: 50% 50%;
-    
+    display: flex;
+    flex-wrap: wrap;
+    max-height: fit-content;
+    justify-content: center; 
+
     .card-holder{
-      width: 100%;
-      height: 100%;
-     user-select: none;
-    
-    }
-    .display-link{
-      text-decoration: none;
-      text-align: center;
-    }
-    .txt-white{
-      color: $beige;
-    }
+       width: 13rem;
+       height: 25rem;
+       
+       padding: 1rem;
+     }
 
-    .txt-black{
-      color: $black;
-    }
-    .card{
-      width: 95%;
-      height:95%;
+     .card{
+       height: 100%;
+       width: 100%;
+       padding: 1rem;
+       display: flex;
+       flex-direction: column;
+       background: linear-gradient($beige, $beige-white);
+       
+       border-radius: 10px;
+     }
+     
+     .splide-holder{
+       width: 100%;
+       height: 90%;    
        overflow: hidden;
-      margin: 0 auto;
-      display: grid;
-      grid-template-rows: 60% 15% 25%;
       
-     
-        img{
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          min-height: 14rem;
-          max-height: 14rem;
-        }
-     
+     }
 
-      .splide-holder{
-      overflow: hidden;
-      
-        width: 11.9rem;
-        height: 100%;
-        margin: 0 auto;
-      }
-
-      .splide-wave{
+     .splide-wave{
+       width: 100%;
+       height: 16rem;
    
-        width: 100%;
-        height: 100%;
-        
-      }
+       img{
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         
+         &:active{
+           cursor: grab;
+         }
+         
+       }
+     }
 
-      .item-info{
-        span{
-          display: block;
-        }
-        .item-brand{
-          margin-bottom: 10px;
-        }
-      }
-
-      .option-holder{
-       
-        display: flex;
-        flex-direction: column;
-       
-        .price-right{
-          display: flex;
-          padding-right: 10px;
-          height: 60px;
-          align-self: flex-end;   
-          user-select: none;
-          span{
-            font-size: 14pt;
-          }
-          }
-
-          .add-to-cart{
-            color: $beige;
-            margin: 0 auto;
-            background: $shopee-orange;
-            padding: 10px;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 10px;
-            
-            &:active{
-              background: orange;
-              user-select: none;
-            }
-
-          }
-
-          
-      }
-    }
+   .item-info{
+     display: flex;
+     flex-wrap: wrap;
+     width: 100%;
     
 
-  }
+     justify-self: flex-start;
+   }
+   .item-brand{
+     display: block;
+     width: 100%;
+   }
+   .item-model{
+     font-size: 10pt;
+     display: block;
+   }
+   .option-holder{
+     width: 100%;
+
+     .price-right{
+       display: block;
+       text-align: right;
+     }
+   }
+
+   }
+   
+   .display-link{
+     text-decoration: none;
+     color: $black;
+   }
+  
   
  
   
@@ -890,233 +859,21 @@
 @media only screen and (max-width: 425px) {
 
 .display-stock{
-width: fit-content;
-height: 100%;
-max-width: fit-content;
-
-margin: 0 auto;
-
-padding-bottom: 1px;
-display: grid;
-grid-template-columns: 50% 50%;
-grid-auto-rows: 30rem;
-grid-auto-columns: 50% 50%;
-
-.card-holder{
-  width: 100%;
-  height: 100%;
-  user-select: none;
-
-}
-.display-link{
-  text-decoration: none;
-  text-align: center;
-}
-.txt-white{
-  color: $beige;
-}
-
-.txt-black{
-  color: $black;
-}
-.card{
-  width: fit-content;
-  height:95%;
-  overflow: hidden;
-  margin: 0 auto;
-  display: grid;
-  grid-template-rows: 60% 15% 25%;
   
- 
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      min-height: 14rem;
-      max-height: 14rem;
-    }
- 
-
-  .splide-holder{
-  overflow: hidden;
   
-    width: 90%;
-    height: 100%;
-    margin: 0 auto;
+  .card-holder{
+    border: 1px solid black;
+    width: 13rem;
   }
 
-  .splide-wave{
-
-    width: 100%;
-    height: 100%;
-    
+  .card{
+    border: 1px solid black;
   }
 
-  .item-info{
-    span{
-      display: block;
-    }
-    .item-brand{
-      margin-bottom: 10px;
-    }
-  }
-
-  .option-holder{
-    display: flex;
-    flex-direction: column;
-   
-    .price-right{
-      display: flex;
-      padding-right: 18px;
-      height: 60px;
-      align-self: flex-end;   
-      user-select: none;
-      span{
-        font-size: 14pt;
-      }
-      }
-
-      .add-to-cart{
-        color: $beige;
-        margin: 0 auto;
-        background: $shopee-orange;
-        padding: 10px;
-        width: 90%;
-        text-decoration: none;
-        
-        cursor: pointer;
-      
-        
-        &:active{
-          background: orange;
-          user-select: none;
-        }
-
-      }
-
-      
+  .item-model{
+    font-size: 8pt;
   }
 }
 
 }
 
-}
-
-@media only screen and (max-width: 371px){
-  .Bag{
-
-    width: 100%;
-    height: 100vh;
-    
-    .display-crumbs{
-      width: 100%;
-      height: fit-content;
-    }
-
-    .bag-wrapper{
-      width: 100%;
-      height: 100%;
-
-      display: grid;
-      grid-template-columns: 100%;
-      grid-template-rows: 6rem;
-      grid-auto-rows: max-content;
-      grid-auto-columns: 100%;
-      gap: 20px;
-    }
-
-    .item-container{
-      width: 100%;
-      height: 95%;
-     
-      align-self: center;
-      align-items: center;
-      display: flex;
-      padding-bottom: 6px;
-      border-bottom: 1px solid $shopee-orange;
-    }
-    
-
-    .image-container{
-      width: 100%;
-      height: 95%;
-      max-width: 5rem;
-      min-width: 5rem;
-
-      overflow: hidden;
-      margin-left: 0.4rem;
-
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-    }
-
-    .item-start{
-      width: 100%;
-      height: 95%;
-
-      
-      .item-brand{
-
-        width: 100%;
-        text-indent: 1rem;
-      }
-      .item-model{
-
-        width: 100%;
-        min-width: 9rem;
-        text-indent: 1rem;
-        padding-bottom: 0.6rem;
-        max-width: fit-content;
-
-        
-        span{
-          font-size: 12pt;
-        }
-        padding-right: 10px;
-      }
-
-      .item-price{
-        text-indent: 1rem;
-
-      }
-    }
-
-    .item-selection{
-      width: 100%;
-      height: 100%;
-      max-width: fit-content;
-      display: flex;
-      justify-content: right;
-      align-items: center;
-
-      .item-delete{
- 
-        width: 2rem;
-        height: 2rem;
-        display: flex;
-        max-height: fit-content;
-        max-width: fit-content;
-        background: $shopee-orange;
-        border-radius: 50%;
-        margin-right: 10px
-        ;
-        
-        span{
-          width: 50px;
-          height: 50px;
-          background: url('../../assets/close.png') no-repeat;
-          position: relative;
-          top: 3px;
-          left: 4px;
-          background-size: 25px;
-          display: block;
-        }
-      }
-    }
-
-  } 
-}

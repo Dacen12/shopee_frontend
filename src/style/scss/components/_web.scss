@@ -469,122 +469,83 @@
     
     
       .display-stock{
-        width: 95%;
-        height: 100%;
-        min-height: fit-content;
-    
-        //  change min height to fit content
-        margin: 0 auto;
-     
-        padding-bottom: 1px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-auto-rows: 30rem;
-        grid-auto-columns: 32% 32% 32%;
-        gap: 10px;
-        .card-holder{
-          width: 100%;
-          height: 100%;
-          max-width: 20rem;
+       display: flex;
+       flex-wrap: wrap;
+       max-height: fit-content;
+       justify-content: center; 
 
-          user-select: none;
-        
+       .card-holder{
+          width: 25rem;
+          height: 35rem;
+          
+          padding: 1rem;
         }
-        .display-link{
-          text-decoration: none;
-          text-align: center;
-        }
-        .txt-white{
-          color: $beige;
-        }
-    
-        .txt-black{
-          color: $black;
-        }
+
         .card{
-          width: 95%;
-          height:95%;
+          height: 100%;
+          width: 100%;
+          padding: 1rem;
+          display: flex;
+          flex-direction: column;
+          background: linear-gradient($beige, $beige-white);
+          
+          border-radius: 10px;
+        }
+        
+        .splide-holder{
+          width: 100%;
+          height: 90%;    
           overflow: hidden;
-          margin: 0 auto;
-          display: grid;
-          grid-template-rows: 60% 15% 25%;
+         
+        }
+
+        .splide-wave{
+          width: 100%;
+          height: 28rem;
+      
           img{
             width: 100%;
             height: 100%;
             object-fit: cover;
-            min-height: 14rem;
-            max-height: 14rem;
-          }
-    
-          .splide-holder{
-          overflow: hidden;
-            width: 11.9rem;
-            height: 100%;
-            margin: 0 auto;
-          }
-    
-          .splide-wave{
-       
-            width: 100%;
-            height: 100%;
+            
+            &:active{
+              cursor: grab;
+            }
             
           }
-    
-          .item-info{
-            span{
-              display: block;
-            }
-            .item-brand{
-              margin-bottom: 10px;
-            }
-
-            .item-model{
-              span{
-                font-size: 10pt;
-              }
-            }
-          }
-    
-          .option-holder{
-           
-            display: flex;
-            flex-direction: column;
-           
-            .price-right{
-              display: flex;
-              padding-right: 10px;
-              height: 60px;
-              align-self: flex-end;   
-              user-select: none;
-              span{
-                font-size: 14pt;
-              }
-              }
-    
-              .add-to-cart{
-                color: $beige;
-                margin: 0 auto;
-                background: $shopee-orange;
-                padding: 10px;
-                max-width: 50%;
-                text-decoration: none;
-                cursor: pointer;
-                border-radius: 10px;
-                
-                &:active{
-                  background: orange;
-                  user-select: none;
-                }
-    
-              }
-    
-              
-          }
         }
-        
-    
+
+      .item-info{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+       
+  
+        justify-self: flex-start;
+      }
+      .item-brand{
+        display: block;
+        width: 100%;
+      }
+      .item-model{
+        font-size: 10pt;
+        display: block;
+      }
+      .option-holder{
+        width: 100%;
+
+        .price-right{
+          display: block;
+          text-align: right;
+        }
+      }
+
       }
       
+      .display-link{
+        text-decoration: none;
+        color: $black;
+      }
      
       
     

@@ -29,19 +29,19 @@ function DisplayStock({stock}) {
               <img src={url} />
           </SplideSlide>
            ))}
-  
-        
         </Splide>
-        <div className="item-info">
-        <span className="item-brand">{obj.brand}</span>
-            <span className="item-model"><Link className="display-link txt-black" to={setLinkToItem(obj)}>{obj.model}</Link></span>
-        </div>
+        <Link className="display-link" to={setLinkToItem(obj)}>
+          <div className="item-info">
+            <span className="item-brand">{obj.brand}</span>
+              <span className="item-model">{obj.model}</span>
+          </div>
         
-        <div className="option-holder">
+          <div className="option-holder">
             <div className="price-right">€ {obj.price}<span></span></div>
-            <Link className="display-link txt-white" to={setLinkToItem(obj)}><div className="add-to-cart">Toevoegen</div></Link>  
-        </div>
+          </div>
+        </Link>
     </div>
+    
       </div>
       ))}
       
