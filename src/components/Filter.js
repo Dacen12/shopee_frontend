@@ -1,18 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css';
 import useFilter from '../misc/useFilter';
 function Filter({stock}) {
   const [setFilter, filterOptions, deleteFilter, setHideFilter, hideFilter] = useFilter(stock)
- 
-
+  const filterRef = useRef()
   
 
 
 
   return (
     <div className="filter">
-
+     
       <div className="filter__container">
         
         <Splide className="splide-container" options={{arrows: false, gap: '20px', perPage: 2}}>

@@ -19,6 +19,8 @@ function Item({useBag}) {
   const [selectedSize, setSelectedSize] = useState({})
   const {bag, addToBag, showBag, setShowBag} = useBag
   const [displayError, setDisplayError] = useState(false)
+  const [currentImage, setCurrentImage] = useState('src')
+
   let navigator = useNavigate()
 
   function showDisplayError(){
@@ -95,6 +97,9 @@ function Button(customclass = '', stockArray =  '') {
     {setBreadCrumb}
 
     <div className="Item">
+      <div className="image-selectors">
+        
+      </div>
      <div className="img-frame">
       <Splide className="splide-container" options={{arrows: false, gap: '30px'}}>
         {itemStock.image_url && itemStock.image_url.map((url) => (
