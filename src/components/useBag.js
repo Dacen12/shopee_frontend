@@ -1,6 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import { makeId } from '../misc/makeid'
 import axios from 'axios'
+const public_location = 'https://shopee-backend.herokuapp.com'
 function useBag() {
   const [bag, setBag] = useState([])
   // bag array structure: {[id: 0, brand: '', model: '', image_url: '', size: [{sizeId: '', selectedSize: ''}], amount: 0}]
@@ -57,7 +58,7 @@ function useBag() {
 
 
   function generatePdf () {
-    axios.get('http//192.168.1.210:4040/pdf', {
+    axios.get(`${public_location}/pdf`, {
       bag
     })
   }
