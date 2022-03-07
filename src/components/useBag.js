@@ -25,7 +25,7 @@ function useBag() {
       const getAmount = e.target.value
      
       const newState = bag.map(obj => obj.model == item.model ? {...obj, amount : getAmount } : obj)
-      console.log(newState)
+     
       setBag(newState)
     }
 
@@ -52,7 +52,7 @@ function useBag() {
 
   useEffect(() => {
     setItem()
-    console.log(bag)
+  
   }, [bag])
 
 

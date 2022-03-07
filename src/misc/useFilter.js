@@ -47,7 +47,7 @@ function useFilter(stock) {
     }
 
     useEffect(() => {
-        console.log(filterSelect)
+   
     }, [filterSelect])
 
     useEffect(() => {
