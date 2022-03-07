@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react'
 import BreadCrumbs from '../components/BreadCrumbs'
 import ShowRedirect from '../components/ShowRedirect'
 import OrderComplete from '../components/OrderComplete'
+import Numeral from 'react-numeral'
+
 export default function Bag({useBag}) {
     const {bag, setBag, showBag, setShowBag, deleteFromBag, changeAmount, generatePdf} = useBag
     const [orderComplete, setOrderComplete] = useState(false)
@@ -9,9 +11,9 @@ export default function Bag({useBag}) {
       const {actual_price, amount} = obj
       const pToFloat = parseFloat(actual_price).toFixed(2)
       const amountInt = parseInt(amount)
-      const convert = (pToFloat * amountInt).toFixed(2)
+      const convert = (pToFloat * amountInt)
     
-      return convert
+      return <Numeral value={convert.toFixed(0)} format={'0,0.00'} />
     }
   
   
@@ -48,8 +50,6 @@ export default function Bag({useBag}) {
         <div className="total">
           <span>Totaal : € {setTotalPrice(obj)} </span>
         </div>
-        <span onClick={() => 
-          deleteFromBag(obj.model)} className="delete">Verwijderen</span>
        <span className="change-amount">Verander aantal</span>
         <select id="selection" onChange={e => changeAmount(e, obj)} className="select">
             <option className="first-option" value="" selected disabled hidden>Kies aantal</option>
@@ -62,6 +62,8 @@ export default function Bag({useBag}) {
             <option value="7">7</option>
             <option value="8">8</option>
           </select>
+          <span onClick={() => 
+          deleteFromBag(obj.model)} className="delete">Verwijderen</span>
       </div> 
       ))}
     

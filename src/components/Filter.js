@@ -3,8 +3,7 @@ import {Splide, SplideSlide} from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css';
 import useFilter from '../misc/useFilter';
 function Filter({stock}) {
-  const [setFilter, filterOptions, deleteFilter, setHideFilter, hideFilter] = useFilter(stock)
-  const filterRef = useRef()
+  const [setFilter, filterOptions, deleteFilter, setHideFilter, hideFilter, filterSelect] = useFilter(stock)
   
 
 
@@ -33,11 +32,15 @@ function Filter({stock}) {
         {/* hide filter ${hideFilter ? 'hider' : ''} */}
       <div className={`filter-container ${hideFilter == true ? 'hider' : ''} `}>
         <ul>
-          <li  data-trans="Schoenen"       onClick={e => setFilter(e.target)} id="shoe">Schoenen</li>
-          <li  data-trans="Jurken"         onClick={e => setFilter(e.target)} id="skirt">Jurken</li>
-          <li  data-trans="Jassen"         onClick={e => setFilter(e.target)} id="jacket">Jassen</li>
-          <li  data-trans="Broeken"        onClick={e => setFilter(e.target)} id="pants">Broeken</li>
-          <li  data-trans="Oorbellen"      onClick={e => setFilter(e.target)} id="earring">Oorbellen</li>
+          {filterSelect.map((obj) => (
+            <>
+          <li  data-trans={obj.dataValue}  className={obj.highlight == true ? 'highlight': ''}      onClick={e => setFilter(e.target)} id={obj.id}>{obj.dataValue}</li>
+          
+            </>
+          ))}
+         
+
+         
         </ul>
       </div>
     </div>

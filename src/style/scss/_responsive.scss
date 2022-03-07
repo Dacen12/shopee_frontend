@@ -2,9 +2,9 @@
 
 
 
+//min width 1201
 
-
-@media only screen and (min-width: 1201px){
+@media only screen and (min-width: 600px){
   .display-stock{
     width: 70%;
     height: fit-content;
@@ -78,9 +78,273 @@
 
 
   .Item{
+    width: 90%;
+    height: 100%;
+    max-height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    gap: 1rem;
+    .img-frame{
+      border-radius: 10px;
+      border: 4px solid $shopee-orange;
+      width: 50%;
+      height: 100%;
+      max-width: 39rem;
+      overflow: hidden;
+      
+      .splide-images{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .img-slide{
+        object-fit: cover;
+        max-width: 30rem;
+        min-width: 30rem;
+        height: 100%;
+        max-height: 45rem;
+      }
+    }
+
+
+    .info-item{
+      width: 50%;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      
+      .info-brand{
+        width: 90%;
+        align-self: center;
+        margin-bottom: 1rem;
+        //brand
+        .item-brand{
+          display: block;
+          font-size: 18pt;
+          font-family: 'roboto';
+        }
+        //model
+        .item-model{
+          font-size: 16pt;
+        }
+      }
+
+      .description{
+        width: 90%;
+        align-self: center;
+        p{
+          border-right: 2px solid $shopee-orange;
+          margin-top: 1rem;
+        }
+        span{ 
+          padding-right: 1rem;
+          border-bottom: 2px solid $shopee-orange;
+          ;
+        }
+      }
+
+      .class-price{
+        align-self: center;
+        margin-top: 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: right;
+        gap: 1rem;
+      }
+
+
+      .size-outer-container{
+        .size-container{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          .s-i{
+            width: fit-content;
+            align-self: center;
+            min-width: 7rem;
+            text-align: center;
+            border-bottom: 2px solid $shopee-orange;
+          }
+
+          .size{
+            width: 80%;
+            align-self: center;
+            display: flex;
+            justify-content: space-evenly;
+            height: fit-content;
+            .sizebox{
+              border: 3px solid $shopee-orange;
+              padding: 1rem;
+              cursor: pointer;
+              min-width: 4rem;
+              text-align: center;
+              user-select: none;
+            }
+          }
+
+          .with-size{
+            display: flex;
+            justify-content: center;
+          }
+
+          .set-selected-size{
+            animation: selectedSize 0.2s ease-in forwards;
+          }
+
+          @keyframes selectedSize{
+            to{
+              background: $shopee-orange;
+              color: $beige;
+            }
+          }
+        }
+        
+      }
+      .without-size{
+        display: flex;
+        justify-content: center;
+      }
+    }
+   
+
+
+  }
+
+  .Bag{
     width: 100%;
     height: 100%;
-    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    span{
+      font-size: 9pt;
+    }
+    .bag-wrapper{
+      width: 100%;
+      height: fit-content;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      
+      .item-container{
+       width: 100%;
+       min-width: 135px;
+       max-width: 350px;
+       display: flex;
+       border: 3px solid $shopee-orange;
+       flex-direction: column;
+       height: 100%;
+       align-items: center;
+       border-radius: 10px;
+       margin-bottom: 1rem;
+       max-height: 430px;
+       min-height: 430px;
+        .image-container{
+          width: 100%;
+          padding: 15px;
+          height: 15rem;
+          overflow: hidden;
+
+          img{
+            width: 100%;
+            object-fit:cover;
+            height: 100%;
+            
+          }
+        }
+
+        .item-start{
+          border: 4px solid transparent;
+          width: 100%;
+          border: 2px solid transparent;
+          height: 3.4rem;
+          .item-brand{
+            span{
+              font-size: 10pt;
+            }
+
+          }
+          .item-model{
+            span{
+              font-size: 9pt;
+            }
+          }
+        }
+
+        .item-price{
+          width: 100%;
+          text-align: right;
+          span{
+            font-size: 9pt;
+          }
+        }
+        .amount{
+          width: 100%;
+          text-align: left;
+        }
+        .total{
+          width: 100%;
+          text-align: left;
+        }
+        .select{
+          width: 60%;
+          text-align: left;
+          outline: none;
+          background-color: transparent;
+          border: 2px solid $shopee-orange;
+          border-radius: 10px;
+        }
+        
+      }
+      .delete{
+        cursor: pointer;
+        text-decoration: underline;
+        color: $shopee-orange;
+        width: fit-content;
+      }
+    }
+
+    .order{
+      width: 50%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background: $shopee-orange;
+      border: none;
+      border-radius: 1px;
+      height: 2rem;
+      align-self: center;
+      max-width: 10rem;
+      cursor: pointer;
+    }
+  }
+
+  .order-complete{
+    border: 2px solid $shopee-orange;
+    border-radius: 10px;
+    transform: translate(-0%, 250px);  
+    padding: 1rem;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    span{
+      display: block;
+      &:nth-child(3){
+        span{
+          color: $shopee-orange;
+        }
+      }
+    }
+    i{
+      text-decoration: underline;
+      color: $shopee-orange;
+      cursor: pointer;
+    }
+
+  
   }
 
 }
@@ -162,8 +426,21 @@
 
   }
 
-}
 
+  .Item{
+    margin: 0 auto;
+    .size{
+      width: 100%;
+
+      min-width: 20rem;
+      max-width: 20rem;
+    }
+    .sizebox{
+      width: fit-content;
+      
+    }
+  }
+}
 
 
 
@@ -234,6 +511,10 @@
       cursor: pointer;
     }
 
+  }
+
+  .filter-container{
+    top: 10.4rem;
   }
 
 
@@ -313,7 +594,6 @@
     width: 100%;
     height: 100%;
     min-height: 85vh;
-    border: 3px solid red;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -368,6 +648,9 @@
 
     }
 
+    .description{
+      display: none;
+    }
     .class-price{
       .item-price{
         display: none;
@@ -381,7 +664,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-     
+      
       .size-container{
         width: 100%;
         .s-i{
@@ -404,7 +687,7 @@
           width: 100%;
           .sizebox{
             height: 70%;
-            width: 50%;
+            width: 30%;
             justify-self: center;
             display: flex;
             justify-content: center;
@@ -416,7 +699,16 @@
         }
       }
     }
+    .set-selected-size{
+      animation: selectedSize 0.2s ease-in forwards;
+    }
 
+    @keyframes selectedSize{
+      to{
+        background: $shopee-orange;
+        color: $beige;
+      }
+    }
     .with-size{
       display: flex;
     
@@ -431,6 +723,140 @@
   }
 
 
+
+  .Bag{
+    border: 4px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    span{
+      font-size: 9pt;
+    }
+    .bag-wrapper{
+      width: 100%;
+      height: fit-content;
+      padding-bottom: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      
+      .item-container{
+       width: 100%;
+       min-width: 135px;
+       max-width: 195px;
+       display: flex;
+       border: 3px solid $shopee-orange;
+       flex-direction: column;
+       height: 100%;
+       align-items: center;
+       border-radius: 10px;
+       margin-bottom: 1rem;
+       max-height: 430px;
+       min-height: 430px;
+        .image-container{
+          width: 100%;
+          padding: 15px;
+          height: 15rem;
+          overflow: hidden;
+          img{
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            min-height: 15rem;
+            max-height: 15rem;
+          }
+        }
+
+        .item-start{
+          border: 4px solid transparent;
+          width: 100%;
+          border: 2px solid transparent;
+          height: 3.4rem;
+          .item-brand{
+            span{
+              font-size: 10pt;
+            }
+
+          }
+          .item-model{
+            span{
+              font-size: 9pt;
+            }
+          }
+        }
+
+        .item-price{
+          width: 100%;
+          text-align: right;
+          span{
+            font-size: 9pt;
+          }
+        }
+        .amount{
+          width: 100%;
+          text-align: left;
+        }
+        .total{
+          width: 100%;
+          text-align: left;
+        }
+        .select{
+          width: 60%;
+          text-align: left;
+          outline: none;
+          background-color: transparent;
+          border: 2px solid $shopee-orange;
+          border-radius: 10px;
+        }
+        
+      }
+      .delete{
+        cursor: pointer;
+        text-decoration: underline;
+        color: $shopee-orange;
+        width: fit-content;
+      }
+    }
+
+    .order{
+      width: 50%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      background: $shopee-orange;
+      border: none;
+      border-radius: 1px;
+      height: 2rem;
+      align-self: center;
+      
+    }
+    
+  }
+    
+  .order-complete{
+    border: 2px solid $shopee-orange;
+    border-radius: 10px;
+    transform: translate(-0%, 250px);  
+    padding: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    span{
+      display: block;
+      &:nth-child(3){
+        span{
+          color: $shopee-orange;
+        }
+      }
+    }
+    i{
+      text-decoration: underline;
+      color: $shopee-orange;
+      cursor: pointer;
+    }
+
+  
+  }
 
 }
 
