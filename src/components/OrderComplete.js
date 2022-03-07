@@ -2,6 +2,8 @@ import React from 'react'
 import axios from 'axios'
 import {saveAs} from 'file-saver'
 import { useNavigate, Navigate } from 'react-router-dom'
+const public_route = 'https://shopee-backend.herokuapp.com'
+
 function OrderComplete({bagArray}) {
     const {bag} = bagArray
     const navigator = useNavigate()
@@ -9,7 +11,7 @@ function OrderComplete({bagArray}) {
        axios({
            method: 'POST',
            responseType: 'blob',
-           url:'http://192.168.1.210:4040/pdf',
+           url:`${public_route}/pdf`,
            data: {arrayBag: bag}
        }).then((res) => {
         const url = window.URL.createObjectURL(new Blob([res.data], {type: "application/pdf;charset=utf-8"}))
@@ -19,7 +21,7 @@ function OrderComplete({bagArray}) {
 
 
 
-  return bag  && bag.length > 1 ? (
+  return bag  && bag.length !== 0 ? (
     <div className="order-complete">
         <span>Je bestelling is verwerkt</span>
         <span>Je kunt <i onClick={() => sendOrder()}>hier klikken</i> om je factuur te bekijken</span>
