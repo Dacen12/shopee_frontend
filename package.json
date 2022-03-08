@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.1.0",
+  "homepage" : "https://shopee-frontend.herokuapp.com/",
   "private": true,
   "dependencies": {
     "@splidejs/react-splide": "^0.6.20",
