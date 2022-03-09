@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import BreadCrumbs from '../components/BreadCrumbs'
 import ShowRedirect from '../components/ShowRedirect'
 import OrderComplete from '../components/OrderComplete'
+import { Link } from 'react-router-dom'
 import Numeral from 'react-numeral'
 
 export default function Bag({useBag}) {
@@ -68,7 +69,10 @@ export default function Bag({useBag}) {
       ))}
     
     </div>
-    <button onClick={() => setOrderComplete(true)} className="order">Bestellen</button>
+    <div className="order-section">
+      <button onClick={() => setOrderComplete(true)} className="order">Bestellen</button>
+      <Link className="shop" to="/">Verder winkelen</Link>
+    </div>
     </div>
     
 

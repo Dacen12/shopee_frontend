@@ -3,6 +3,7 @@ import axios from 'axios'
 import {saveAs} from 'file-saver'
 import { useNavigate, Navigate } from 'react-router-dom'
 const public_route = 'https://shopee-backend.herokuapp.com'
+const private_route = 'http://192.168.1.210:4040'
 
 function OrderComplete({bagArray}) {
     const {bag} = bagArray
@@ -17,6 +18,7 @@ function OrderComplete({bagArray}) {
         const url = window.URL.createObjectURL(new Blob([res.data], {type: "application/pdf;charset=utf-8"}))
         saveAs(url)
        })
+       
     }
 
 
