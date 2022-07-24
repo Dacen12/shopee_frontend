@@ -19,14 +19,3 @@ function Home({data}) {
 
 export default Home
 
-/**
- * 
- *  modifiedArray ? ( <div className="home">
-        <Filter stock={{stockData, setStockData , modifiedArray, setModifiedArray}} />
-
-    <DisplayStock stock={{modifiedArray, setModifiedArray, stockData}} />
-    </div>) :
- * 
- * 
- * 
- */
