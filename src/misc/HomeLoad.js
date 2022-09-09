@@ -5,7 +5,7 @@ function HomeLoad() {
 
     <div className="home-loader">
    <span>Momentje geduld aub. </span>
-    <span>Ons assortiment is aan het laden...  </span>  
+    <span>Onze assortimenten worden opgehangen...</span>  
     <img src={buffer} alt="Loading..." draggable="false" />
     </div>
   )

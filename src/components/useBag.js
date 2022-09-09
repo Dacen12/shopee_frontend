@@ -3,8 +3,8 @@ import { makeId } from '../misc/makeid'
 import axios from 'axios'
 const public_location = 'https://shopee-backend.herokuapp.com'
 function useBag() {
+  
   const [bag, setBag] = useState([])
-  // bag array structure: {[id: 0, brand: '', model: '', image_url: '', size: [{sizeId: '', selectedSize: ''}], amount: 0}]
   const [showBag, setShowBag] = useState(false)
 
   
@@ -68,6 +68,7 @@ function useBag() {
   const bagOptions = {
     bag,
     addToBag,
+    setBag,
     showBag,
     setShowBag,
     deleteFromBag,

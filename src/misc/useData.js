@@ -10,7 +10,6 @@ function useData(path = '') {
         axios.get(`${public_route}${path}`).then((res) => {
             setStockData(res.data)
             setModifiedArray(res.data)
-    
         })
     }
   

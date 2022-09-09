@@ -8,6 +8,7 @@ import Numeral from 'react-numeral'
 export default function Bag({useBag}) {
     const {bag, setBag, showBag, setShowBag, deleteFromBag, changeAmount, generatePdf} = useBag
     const [orderComplete, setOrderComplete] = useState(false)
+    
     function setTotalPrice(obj){
       const {actual_price, amount} = obj
       const pToFloat = parseFloat(actual_price).toFixed(2)
@@ -17,7 +18,7 @@ export default function Bag({useBag}) {
       return <Numeral value={convert.toFixed(0)} format={'0,0.00'} />
     }
   
-  
+
     return bag.length !== 0 && orderComplete == false ? (
     <div className="Bag">
       <div className="display-crumbs">
@@ -26,8 +27,8 @@ export default function Bag({useBag}) {
       <div className="bag-wrapper">
         
       {bag && bag.map((obj) => (
-
-      <div className="item-container">
+        
+      <div key={obj.id} className="item-container">
       <div className="image-container">
         <img src={obj.image_url} alt="Foto winkelwagen" />
       </div>
@@ -77,7 +78,7 @@ export default function Bag({useBag}) {
     
 
     
-   ) : (orderComplete == true ? (<OrderComplete bagArray={{bag}} />) : <ShowRedirect />)
+   ) : (orderComplete == true ? (<OrderComplete bagArray={{bag, setBag}} />) : <ShowRedirect />)
 }
 
 
